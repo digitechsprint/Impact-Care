@@ -49,7 +49,7 @@ for (const file of files) {
   html = $.html();
 
   // 4. Update Hero Texts
-  html = html.replace(/Your Health Our Priority/g, 'WHO-GMP Certified Partner');
+  html = html.replace(/Your Health Our Priority/g, ' ');
   html = html.replace(/Expert medical care you can rely on/g, 'From Care To Cure');
   html = html.replace(/Experience healthcare you can trust\. Our dedicated team provides compassionate, high-quality care\./g, "Trusted by Patients and Medical Experts worldwide. We have strengthened our position as leaders in the Indian pharmaceutical sector, and we’ll keep our commitment to serving humanity through quality medication.  ");
 

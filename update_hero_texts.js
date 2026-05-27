@@ -12,7 +12,7 @@ for (const file of files) {
     let html = fs.readFileSync(file, 'utf8');
 
     // Replace H3
-    html = html.replace(/Your Health Our Priority/g, 'WHO-GMP Certified Partner');
+    html = html.replace(/Your Health Our Priority/g, ' ');
     // Replace H1
     html = html.replace(/Expert medical care you can rely on/g, 'From Care To Cure');
     // Replace Paragraph
