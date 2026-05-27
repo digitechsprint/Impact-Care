@@ -1,4 +1,40 @@
-<html><head></head><body><div class="preloader">
+<html><head>
+    <style id="top-hero-banner-styles">
+        /* Scoped styles only for the very top hero banner */
+        .top-hero-banner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                135deg,
+                rgba(0, 8, 25, 0.70) 0%,
+                rgba(0, 25, 55, 0.55) 50%,
+                rgba(0, 80, 90, 0.40) 100%
+            );
+            z-index: 0;
+            pointer-events: none;
+            border-radius: inherit;
+        }
+        .top-hero-banner > *,
+        .top-hero-banner .e-con-inner,
+        .top-hero-banner h1,
+        .top-hero-banner h2,
+        .top-hero-banner h3,
+        .top-hero-banner p,
+        .top-hero-banner .elementor-widget-container,
+        .top-hero-banner .ekit-breadcrumb {
+            position: relative !important;
+            z-index: 1 !important;
+            color: #ffffff !important;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        .top-hero-banner .ekit-breadcrumb li,
+        .top-hero-banner .ekit-breadcrumb a,
+        .top-hero-banner .ekit-breadcrumb span {
+            color: rgba(255, 255, 255, 0.90) !important;
+        }
+    </style>
+    </head><body><div class="preloader">
 		<div class="loading-container">
 			<div class="loading"></div>
 			<div id="loading-icon"><img src="/assets/uploads/images/Logo.png" alt="Preloader"></div>
@@ -178,7 +214,7 @@
 			<div data-elementor-type="wp-page" data-elementor-id="4281" class="elementor elementor-4281">
 				<div class="elementor-element elementor-element-77aa087 e-flex e-con-boxed e-con e-parent" data-id="77aa087" data-element_type="container" data-e-type="container">
 					<div class="e-con-inner">
-		<div class="elementor-element elementor-element-f23f453 bg-section e-flex e-con-boxed e-con e-child" data-id="f23f453" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+		<div class="elementor-element elementor-element-f23f453 bg-section e-flex e-con-boxed e-con e-child top-hero-banner" data-id="f23f453" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}" style="background-image: url('/assets/uploads/images/pharma_hero_banner_3d.png') !important; background-size: cover !important; background-position: center center !important; background-repeat: no-repeat !important; position: relative !important; min-height: 250px;">
 					<div class="e-con-inner">
 				<div class="elementor-element elementor-element-1065bd2 at-heading-animation at-animation-heading-style-3 elementor-widget elementor-widget-heading" data-id="1065bd2" data-element_type="widget" data-e-type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="heading.default">
 				<div class="elementor-widget-container">

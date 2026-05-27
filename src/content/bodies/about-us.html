@@ -1,4 +1,40 @@
-<html><head></head><body><div class="preloader">
+<html><head>
+    <style id="top-hero-banner-styles">
+        /* Scoped styles only for the very top hero banner */
+        .top-hero-banner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                135deg,
+                rgba(0, 8, 25, 0.70) 0%,
+                rgba(0, 25, 55, 0.55) 50%,
+                rgba(0, 80, 90, 0.40) 100%
+            );
+            z-index: 0;
+            pointer-events: none;
+            border-radius: inherit;
+        }
+        .top-hero-banner > *,
+        .top-hero-banner .e-con-inner,
+        .top-hero-banner h1,
+        .top-hero-banner h2,
+        .top-hero-banner h3,
+        .top-hero-banner p,
+        .top-hero-banner .elementor-widget-container,
+        .top-hero-banner .ekit-breadcrumb {
+            position: relative !important;
+            z-index: 1 !important;
+            color: #ffffff !important;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        .top-hero-banner .ekit-breadcrumb li,
+        .top-hero-banner .ekit-breadcrumb a,
+        .top-hero-banner .ekit-breadcrumb span {
+            color: rgba(255, 255, 255, 0.90) !important;
+        }
+    </style>
+    </head><body><div class="preloader">
 		<div class="loading-container">
 			<div class="loading"></div>
 			<div id="loading-icon"><img src="/assets/uploads/images/Logo.png" alt="Preloader"></div>
@@ -178,7 +214,7 @@
 			<div data-elementor-type="wp-page" data-elementor-id="282" class="elementor elementor-282">
 				<div class="elementor-element elementor-element-11af3d9 e-flex e-con-boxed e-con e-parent" data-id="11af3d9" data-element_type="container" data-e-type="container">
 					<div class="e-con-inner">
-		<div class="elementor-element elementor-element-31536b2 bg-section e-flex e-con-boxed e-con e-child" data-id="31536b2" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+		<div class="elementor-element elementor-element-31536b2 bg-section e-flex e-con-boxed e-con e-child top-hero-banner" data-id="31536b2" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}" style="background-image: url('/assets/uploads/images/about_us_bg_3d.png') !important; background-size: cover !important; background-position: center center !important; background-repeat: no-repeat !important; position: relative !important; min-height: 250px;">
 					<div class="e-con-inner">
 				<div class="elementor-element elementor-element-3822550 at-heading-animation at-animation-heading-style-3 elementor-widget elementor-widget-heading" data-id="3822550" data-element_type="widget" data-e-type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
@@ -287,38 +323,6 @@
 				<div class="elementor-element elementor-element-c600ffe image-anime about-img-1 at-image-animation at-animation-image-style-1 elementor-widget elementor-widget-image" data-id="c600ffe" data-element_type="widget" data-e-type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="image.default">
 				<div class="elementor-widget-container">
 															<img fetchpriority="high" decoding="async" width="463" height="700" src="/wp-content/uploads/2024/11/about-img-1.jpg" class="attachment-full size-full wp-image-541" alt="">															</div>
-				</div>
-		<div class="elementor-element elementor-element-85425a2 e-con-full company-timing e-flex e-con e-child" data-id="85425a2" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;position&quot;:&quot;absolute&quot;}">
-				<div class="elementor-element elementor-element-6fc6c85 at-heading-animation at-animation-heading-none elementor-widget elementor-widget-heading" data-id="6fc6c85" data-element_type="widget" data-e-type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h2 class="elementor-heading-title elementor-size-default">Business Hours</h2>				</div>
-				</div>
-				<div class="elementor-element elementor-element-27f35d9 elementor-widget elementor-widget-elementskit-business-hours" data-id="27f35d9" data-element_type="widget" data-e-type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="elementskit-business-hours.default">
-				<div class="elementor-widget-container">
-					<div class="ekit-wid-con">		<div class="ekit-business-hours-inner">
-						<div class="ekit-single-day elementor-repeater-item-ce490a8 ekit-closed-day">
-								<span class="ekit-business-day">Mon To Fri</span>
-								<span class="ekit-business-time"> 09:30 - 07:30</span>
-							</div>
-						<div class="ekit-single-day elementor-repeater-item-1f1cb4d ekit-closed-day">
-								<span class="ekit-business-day">Saturday</span>
-								<span class="ekit-business-time"> 10:30 - 5:00</span>
-							</div>
-						<div class="ekit-single-day elementor-repeater-item-21e511e ">
-								<span class="ekit-business-day">Sunday</span>
-								<span class="ekit-business-time"> Closed</span>
-							</div>
-					</div>
-        </div>				</div>
-				</div>
-				<div class="elementor-element elementor-element-344fd8f elementor-view-stacked elementor-absolute elementor-shape-circle elementor-widget elementor-widget-icon" data-id="344fd8f" data-element_type="widget" data-e-type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;,&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="icon.default">
-				<div class="elementor-widget-container">
-							<div class="elementor-icon-wrapper">
-			<div class="elementor-icon">
-			<i aria-hidden="true" class="fas fa-clock"></i>			</div>
-		</div>
-						</div>
-				</div>
 				</div>
 		<div class="elementor-element elementor-element-24af886 e-con-full about-img-2 e-flex e-con e-child" data-id="24af886" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;position&quot;:&quot;absolute&quot;}">
 				<div class="elementor-element elementor-element-e0eeffe image-anime at-image-animation at-animation-image-none elementor-widget elementor-widget-image" data-id="e0eeffe" data-element_type="widget" data-e-type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="image.default">
@@ -1698,4 +1702,5 @@
 					</div>
 				</div>
 				</div>
-		</div></body></html>
+		</div>
+</body></html>
