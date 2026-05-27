@@ -39,9 +39,80 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
+  if (urlPath === "/about-us") {
+    return {
+      title: "Know About the Best West African Healthcare Solution",
+      description: "We are committed to providing Medical Healthcare supplies. Our Mission & Vision include Custom Formulation, Contract Manufacturing, & Quality Control Testing.",
+      openGraph: {
+        title: "Know About the Best West African Healthcare Solution",
+        description: "We are committed to providing Medical Healthcare supplies. Our Mission & Vision include Custom Formulation, Contract Manufacturing, & Quality Control Testing.",
+        type: "article",
+      }
+    };
+  }
+
+  if (urlPath === "/products") {
+    return {
+      title: "Buy Affordable Medicine | Export pharmaceutical products",
+      description: "Export pharmaceutical products for healthcare needs. Buy Medicine at affordable prices in Burkina Faso, Côte d'Ivoire, Senegal, Togo & West Africa.",
+      openGraph: {
+        title: "Buy Affordable Medicine | Export pharmaceutical products",
+        description: "Export pharmaceutical products for healthcare needs. Buy Medicine at affordable prices in Burkina Faso, Côte d'Ivoire, Senegal, Togo & West Africa.",
+      }
+    };
+  }
+
+  if (urlPath === "/manufacturing") {
+    return {
+      title: "Impact Health Care - Medicine manufacturing company",
+      description: "Impact Health Care - medicine manufacturing company offers fast delivery, custom formulation, contract manufacturing, quality control in West Africa",
+      openGraph: {
+        title: "Impact Health Care - Medicine manufacturing company",
+        description: "Impact Health Care - medicine manufacturing company offers fast delivery, custom formulation, contract manufacturing, quality control in West Africa",
+        type: "article",
+      }
+    };
+  }
+
+  if (urlPath === "/contact-us") {
+    return {
+      title: "Impact Healthcare Pharmaceuticals West Africa",
+      description: "Impact Care contact, healthcare support, customer service, medical inquiries, connect with Impact Care, healthcare assistance",
+      openGraph: {
+        title: "Impact Healthcare Pharmaceuticals West Africa",
+        description: "Impact Care contact, healthcare support, customer service, medical inquiries, connect with Impact Care, healthcare assistance",
+        type: "article",
+      }
+    };
+  }
+
+  if (urlPath === "/blog") {
+    return {
+      title: "Explore informative healthcare blog posts at Impact Care.",
+      description: "Impact Care blog, healthcare insights, medical research, HPV awareness, patient resources, wellness articles, health tips",
+      openGraph: {
+        title: "Explore informative healthcare blog posts at Impact Care.",
+        description: "Impact Care blog, healthcare insights, medical research, HPV awareness, patient resources, wellness articles, health tips",
+        type: "article",
+      }
+    };
+  }
+
+  if (urlPath === "/careers") {
+    return {
+      title: "Careers at Impact Healthcare | Join the Impact Family",
+      description: "Careers - Join Impact Healthcare's diverse, employee-friendly team. Thrive in a supportive, growth-driven culture. Apply today: info@impactcare.co.in",
+      openGraph: {
+        title: "Careers at Impact Healthcare | Join the Impact Family",
+        description: "Careers - Join Impact Healthcare's diverse, employee-friendly team. Thrive in a supportive, growth-driven culture. Apply today: info@impactcare.co.in",
+        type: "article",
+      }
+    };
+  }
+
   return {
     title: page.title,
-    description: `${page.title} – Dispnsary medical and healthcare website.`,
+    description: `${page.title} – Impact Healthcare.`,
   };
 }
 

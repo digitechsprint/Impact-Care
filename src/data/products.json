@@ -1,0 +1,134 @@
+[
+  {
+    "id": "1",
+    "slug": "acofan-tablet",
+    "name": "Acofan 100mg/500mg Tablet",
+    "category": "Nsaid",
+    "composition": "Aceclofenac 100mg + Paracetamol 500mg",
+    "dosageForm": "Tablet",
+    "packDetails": "10x10 Blister Pack",
+    "description": "Acofan is a highly effective pain and inflammation medication used to treat conditions such as osteoarthritis, rheumatoid arthritis, and ankylosing spondylitis. The combination of Aceclofenac and Paracetamol provides rapid pain relief.",
+    "image": "/assets/uploads/products/acofan_tablet_1779861526962.png"
+  },
+  {
+    "id": "2",
+    "slug": "acumol-tablet",
+    "name": "Acumol Tablet",
+    "category": "Nsaid",
+    "composition": "Acelofenac BP 100 mg + Paracetamol BP 500mg",
+    "dosageForm": "Tablet",
+    "packDetails": "10x10 Alu-Alu Pack",
+    "description": "Acumol Tablet is prescribed for the relief of pain and inflammation in rheumatoid arthritis, osteoarthritis, and ankylosing spondylitis. It helps in blocking the release of certain chemical messengers that cause pain and swelling.",
+    "image": "/assets/uploads/products/acumol_tablet_1779861543662.png"
+  },
+  {
+    "id": "3",
+    "slug": "afsc-kit",
+    "name": "AFSC Kit",
+    "category": "Antibiotic",
+    "composition": "Azithromycin, Fluconazole, Secnidazole",
+    "dosageForm": "Kit (Tablets & Capsules)",
+    "packDetails": "1 Kit / Box",
+    "description": "AFSC Kit is a comprehensive first aid kit medication primarily used for the syndromic treatment of vaginal discharge. It contains a combination of antifungal, antibacterial, and antiprotozoal medications for rapid recovery.",
+    "image": "/assets/uploads/products/afsc_kit_1779861558320.png"
+  },
+  {
+    "id": "4",
+    "slug": "amloclass-5",
+    "name": "Amloclass 5mg Tablet",
+    "category": "Calcium Channel Blocker",
+    "composition": "Amlodipine 5mg",
+    "dosageForm": "Tablet",
+    "packDetails": "10x10 Blister Pack",
+    "description": "Amloclass 5mg Tablet is used to treat high blood pressure (hypertension) and prevent angina (heart-related chest pain). It works by relaxing blood vessels so that blood can flow more easily to the heart.",
+    "image": "/assets/uploads/products/amloclass_tablet_1779861571411.png"
+  },
+  {
+    "id": "5",
+    "slug": "amloclass-at",
+    "name": "Amloclass AT Tablet",
+    "category": "Calcium Channel Blocker",
+    "composition": "Amlodipine Besilate BP 5mg + Atenolol BP 50mg",
+    "dosageForm": "Tablet",
+    "packDetails": "10x10 Alu-Alu Pack",
+    "description": "Amloclass AT combines a calcium channel blocker and a beta-blocker to effectively manage hypertension. This synergistic combination provides superior blood pressure control and reduces cardiovascular risks.",
+    "image": "/assets/uploads/products/amloclass_at_tablet_1779861586240.png"
+  },
+  {
+    "id": "6",
+    "slug": "amloclass-10",
+    "name": "Amloclass 10mg Tablet",
+    "category": "Calcium Channel Blocker",
+    "composition": "Amlodipine 10mg",
+    "dosageForm": "Tablet",
+    "packDetails": "10x10 Blister Pack",
+    "description": "Amloclass 10mg Tablet is a higher strength dosage for the treatment of severe hypertension and chronic stable angina. It provides 24-hour control over blood pressure.",
+    "image": "/assets/uploads/products/amloclass_tablet_1779861571411.png"
+  },
+  {
+    "id": "7",
+    "slug": "applift-syrup",
+    "name": "Apliff Syrup",
+    "category": "Herbal",
+    "composition": "Cyproheptadine HCL + Tricholine Citrate",
+    "dosageForm": "Syrup",
+    "packDetails": "200ml Bottle",
+    "description": "Apliff Syrup is a premium appetite stimulant and nutritional supplement. It helps in weight gain and promotes healthy liver function by improving digestion and metabolism.",
+    "image": "/assets/uploads/products/applift_syrup_1779861603024.png"
+  },
+  {
+    "id": "8",
+    "slug": "atroclass-10",
+    "name": "Atroclass 10 Tablet",
+    "category": "Statin",
+    "composition": "Atorvastatin 10mg",
+    "dosageForm": "Tablet",
+    "packDetails": "10x10 Alu-Alu Pack",
+    "description": "Atroclass 10 is a statin medication used to lower cholesterol and triglycerides in the blood. It reduces the risk of cardiovascular diseases and helps prevent heart attacks.",
+    "image": "/assets/uploads/products/atroclass_tablet_generated.png"
+  },
+  {
+    "id": "9",
+    "slug": "atroclass-20",
+    "name": "Atroclass 20mg Tablet",
+    "category": "Statin",
+    "composition": "Atorvastatin 20mg",
+    "dosageForm": "Tablet",
+    "packDetails": "10x10 Alu-Alu Pack",
+    "description": "Atroclass 20mg Tablet is an advanced dosage statin for patients requiring significant reductions in LDL cholesterol levels to mitigate high cardiovascular risks.",
+    "image": "/assets/uploads/products/atroclass_tablet_generated.png"
+  },
+  {
+    "id": "10",
+    "slug": "cefaxone-1gm",
+    "name": "Cefaxone 1gm Injection",
+    "category": "Antibiotic",
+    "composition": "Ceftriaxone 1gm",
+    "dosageForm": "Injection Vial",
+    "packDetails": "1 Vial / Pack",
+    "description": "Cefaxone 1gm Injection is a potent cephalosporin antibiotic used to treat severe bacterial infections, including meningitis, pneumonia, and sepsis.",
+    "image": "/assets/uploads/products/cefezone_injection_1779861625763.png"
+  },
+  {
+    "id": "11",
+    "slug": "cefzone-s-1-5gm",
+    "name": "Cefzone-S 1.5gm Injection",
+    "category": "Antibiotic",
+    "composition": "Ceftriaxone 1gm + Sulbactam 500mg",
+    "dosageForm": "Injection Vial",
+    "packDetails": "1 Vial / Pack",
+    "description": "Cefzone-S combines Ceftriaxone with Sulbactam to combat highly resistant bacterial strains. This broad-spectrum antibiotic ensures rapid clinical recovery in critical care.",
+    "image": "/assets/uploads/products/cefezone_injection_1779861625763.png"
+  },
+  {
+    "id": "12",
+    "slug": "cipotax-tablet",
+    "name": "Cipotax 500mg/600mg Tablet",
+    "category": "Antibiotic",
+    "composition": "Cefuroxime Axetil",
+    "dosageForm": "Tablet",
+    "packDetails": "10x10 Blister Pack",
+    "description": "Cipotax Tablet is a second-generation cephalosporin antibiotic used to treat a wide variety of bacterial infections, such as bronchitis, gonorrhea, and infections of the ears, throat, and sinuses.",
+    "image": "/assets/uploads/products/cipotax_tablet_1779861642554.png"
+  }
+]
