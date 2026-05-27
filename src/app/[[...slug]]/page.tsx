@@ -23,8 +23,22 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const page = getPageByPath(slugSegmentsToPath(slug));
+  const urlPath = slugSegmentsToPath(slug);
+  const page = getPageByPath(urlPath);
   if (!page) return { title: "Not Found" };
+
+  if (urlPath === "/" || urlPath === "/home-slider" || urlPath === "/home-image" || urlPath === "/home-video") {
+    return {
+      title: "West Africa Best Medical Products Supplier-Impact Healthcare",
+      description: "Impact Care, healthcare solutions, affordable medicines, HPV awareness, patient resources, health articles, medical research",
+      openGraph: {
+        title: "West Africa Best Medical Products Supplier-Impact Healthcare",
+        description: "Impact Care, healthcare solutions, affordable medicines, HPV awareness, patient resources, health articles, medical research",
+        type: "website",
+      }
+    };
+  }
+
   return {
     title: page.title,
     description: `${page.title} – Dispnsary medical and healthcare website.`,
