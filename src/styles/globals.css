@@ -397,3 +397,50 @@ body {
         flex: none !important;
     }
 }
+
+/* Hide unwanted social media icons above Hub items on the About Page */
+.team-body .elementor-widget-social-icons {
+    display: none !important;
+}
+
+
+/* Fix the squished icon boxes in the "Professionals dedicated" section */
+/* Make the parent container stack vertically */
+.elementor-element-05f2dff > .e-con-inner {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 40px !important;
+    align-items: center !important;
+}
+
+/* Ensure the child columns take full width */
+.elementor-element-05f2dff > .e-con-inner > .e-child {
+    width: 100% !important;
+    max-width: 1200px !important;
+}
+
+/* Make the 3 icon boxes sit side-by-side horizontally on desktop */
+.elementor-element-8f1985f {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 30px !important;
+    justify-content: center !important;
+}
+
+/* Ensure the individual icon boxes take equal width (approx 30% each) */
+.elementor-element-8f1985f .our-facility-item {
+    width: 30% !important;
+    min-width: 300px !important;
+    flex: 1 1 30% !important;
+}
+
+@media (max-width: 991px) {
+    .elementor-element-8f1985f {
+        flex-direction: column !important;
+    }
+    .elementor-element-8f1985f .our-facility-item {
+        width: 100% !important;
+    }
+}
+
