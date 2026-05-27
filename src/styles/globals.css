@@ -444,3 +444,122 @@ body {
     }
 }
 
+
+/* ========================================= */
+/* PREMIUM FLOATING PILL HEADER NAVIGATION   */
+/* ========================================= */
+
+/* The main header container - Floating Pill Shape */
+.elementor-3822 .elementor-element-8e961d2 {
+    background: rgba(255, 255, 255, 0.98) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border-radius: 50px !important;
+    margin: 15px auto !important; /* Slightly tighter top margin */
+    padding: 0px 25px !important; /* Made thinner */
+    max-width: 92% !important; /* Float symmetrically in the center */
+    position: fixed !important; /* Now it scrolls with the page! */
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 9999 !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08) !important; /* Lighter shadow for white bg */
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Force the logo to stay a reasonable size but larger than before */
+.elementor-3822 .ata-site-logo-img {
+    max-height: 48px !important;
+    width: auto !important;
+}
+
+/* Ensure inner columns are vertically centered */
+.elementor-3822 .elementor-element-8e961d2 > .e-con-inner {
+    align-items: center !important;
+    justify-content: space-between !important;
+}
+
+/* Nav Menu Items Typography - Exact match to screenshot */
+.elementor-3822 .ekit-menu-nav-link {
+    color: #1e293b !important; /* Dark text for white background */
+    text-transform: uppercase !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    letter-spacing: 1.2px !important;
+    padding: 4px 15px !important; /* Ultra thin padding */
+}
+
+.elementor-3822 .ekit-menu-nav-link:hover {
+    color: #F5B027 !important; /* Premium gold hover */
+}
+
+/* Submenu dropdown fix for floating header */
+.elementor-3822 .elementskit-dropdown {
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2) !important;
+    margin-top: 20px !important;
+}
+
+/* The CTA Button (Match the bright yellow/orange rounded button) */
+.elementor-3822 .elementor-button {
+    background-color: #F8AE22 !important; /* Screenshot-accurate vibrant yellow-orange */
+    color: #111111 !important;
+    border-radius: 50px !important;
+    padding: 10px 24px !important; /* Slimmer button padding */
+    font-weight: 600 !important;
+    font-size: 14px !important; /* Slightly smaller text */
+    border: none !important;
+    transition: all 0.3s ease !important;
+}
+
+.elementor-3822 .elementor-button:hover {
+    background-color: #e59d1c !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 20px rgba(248, 174, 34, 0.3) !important;
+}
+
+/* Remove default background colors from standard containers to let pill show */
+.elementor-3822 .elementor-element-8e961d2.bg-section {
+    background-color: transparent !important;
+    background-image: none !important;
+}
+
+/* Force the navigation menu to stay on ONE line and prevent wrapping */
+.elementor-3822 .elementskit-navbar-nav {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Ensure inner columns dont have excess padding causing height issues */
+.elementor-3822 .elementor-element-8e961d2 .e-con,
+.elementor-3822 .elementor-element-8e961d2 .e-con-inner {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    min-height: 0 !important;
+}
+
+/* Make nav links even smaller and tighter so they fit horizontally */
+.elementor-3822 .ekit-menu-nav-link {
+    font-size: 11px !important;
+    padding: 2px 7px !important;
+    letter-spacing: 0.5px !important;
+    white-space: nowrap !important; /* Fix ABOUT US / CONTACT US wrapping */
+}
+
+/* Make the CTA button even slimmer to reduce overall height */
+.elementor-3822 .elementor-button {
+    padding: 8px 18px !important;
+    font-size: 13px !important;
+    line-height: 1 !important;
+}
+
+/* Ensure the central menu container can shrink/grow as needed */
+.elementor-3822 .elementor-element-e2b5f2c {
+    flex-grow: 1 !important;
+    justify-content: center !important;
+}
+
