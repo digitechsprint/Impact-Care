@@ -35,7 +35,7 @@ export function HomeSlider() {
   }, []);
 
   return (
-    <div style={{ position: "relative", width: "100%", height: "100vh", overflow: "hidden", minHeight: "600px" }}>
+    <div className="home-slider-hero" style={{ position: "relative", width: "100%", height: "100vh", overflow: "hidden", minHeight: "600px" }}>
       {slides.map((slide, index) => {
         const isActive = index === currentSlide;
         return (

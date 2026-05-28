@@ -39,6 +39,7 @@ export function WordPressPage({
     let hero: Element | null = null;
 
     const heroSelectors = [
+      ".home-slider-hero",
       ".top-hero-banner",
       ".page-header.bg-section",
       'main#content .e-parent:first-of-type',
