@@ -56,11 +56,6 @@ export const BLOG_HTML = `<div class="elementor-element elementor-element-cf3ac5
                     <a href="/research-breakthrough-in-heart-disease-treatment/">
                             Research Breakthrough in Heart Disease Treatment                    </a>
                 </h2>
-                                                                                                                                                                                                            <div class="btn-wraper">
-                                                                            <a href="/research-breakthrough-in-heart-disease-treatment/" class="elementskit-btn  whitespace--normal" >
-                                            Read more                                            <i aria-hidden="true" class="icon icon-right-arrow"></i>                                        </a>
-                                    
-                                                                    </div>
                                                     </div><!-- .elementskit-post-body END -->
                     </div>
                 
@@ -98,11 +93,6 @@ export const BLOG_HTML = `<div class="elementor-element elementor-element-cf3ac5
                     <a href="/advanced-medical-solutions-for-every-patients-needs/">
                             Advanced Medical Solutions for Every Patient&#8217;s Needs                    </a>
                 </h2>
-                                                                                                                                                                                                            <div class="btn-wraper">
-                                                                            <a href="/advanced-medical-solutions-for-every-patients-needs/" class="elementskit-btn  whitespace--normal" >
-                                            Read more                                            <i aria-hidden="true" class="icon icon-right-arrow"></i>                                        </a>
-                                    
-                                                                    </div>
                                                     </div><!-- .elementskit-post-body END -->
                     </div>
                 
@@ -140,11 +130,6 @@ export const BLOG_HTML = `<div class="elementor-element elementor-element-cf3ac5
                     <a href="/your-trusted-partner-in-comprehensive-medical-care/">
                             Your Trusted Partner in Comprehensive Medical Care                    </a>
                 </h2>
-                                                                                                                                                                                                            <div class="btn-wraper">
-                                                                            <a href="/your-trusted-partner-in-comprehensive-medical-care/" class="elementskit-btn  whitespace--normal" >
-                                            Read more                                            <i aria-hidden="true" class="icon icon-right-arrow"></i>                                        </a>
-                                    
-                                                                    </div>
                                                     </div><!-- .elementskit-post-body END -->
                     </div>
                 
