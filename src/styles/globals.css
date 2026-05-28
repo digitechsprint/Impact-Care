@@ -686,7 +686,7 @@ body {
 .elementor-element.elementor-element-0d2b752 {
   border-radius: 40px 40px 0 0 !important;
   overflow: hidden !important;
-  margin-top: 15px !important;
+  margin-top: 0 !important;
 }
 
 
@@ -703,9 +703,24 @@ body {
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8) !important;
 }
 
+/* Make single blog hero text readable on the banner */
+.single-post .page-header h1,
+.single-post .page-header .text-anime,
+.single-post .page-header .post-single-meta,
+.single-post .page-header .post-single-meta a,
+.single-post .page-header .post-single-meta i {
+  color: #ffffff !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Remove the tags/share row from all single blog detail pages */
+.single-post .page-single-post .post-content > .row.align-items-center {
+  display: none !important;
+}
+
 /* Apply the same curved hero styling to .page-header */
 .page-header.bg-section {
   border-radius: 40px 40px 0 0 !important;
-  margin-top: 15px !important;
+  margin-top: 0 !important;
   overflow: hidden !important;
 }

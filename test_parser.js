@@ -1,0 +1,10 @@
+const fs = require('fs');
+const cheerio = require('cheerio');
+const html = fs.readFileSync('src/content/bodies/products.html', 'utf8');
+const $ = cheerio.load(html);
+const header = $('.ekit-template-content-header').parent().html() || '';
+const footer = $('.ekit-template-content-footer').parent().html() || '';
+const heroBanner = $('.top-hero-banner').closest('.e-con').parent().html() || '';
+console.log('Header:', header.length);
+console.log('Footer:', footer.length);
+console.log('Banner:', heroBanner.length);

@@ -124,12 +124,6 @@ export const HEALTH_HTML = `<div class="elementor-element elementor-element-1b5c
                         <div class="box-body">
                             <h3 class="elementskit-info-box-title">
                     Healing Starts Here Caring for You Always                </h3>
-                                                    <div class="box-footer disable_hover_button">
-                    <div class="btn-wraper">
-                                                            <a class="elementskit-btn whitespace--normal" href="#">
-                                        Learn More                                        <i aria-hidden="true" class="icon icon-right-arrow"></i>                                    </a>
-                                                        </div>
-                </div>
                     </div>
         
         

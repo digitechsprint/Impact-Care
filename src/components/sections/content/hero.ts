@@ -20,9 +20,9 @@ export const HERO_HTML = `<div class="elementor-element elementor-element-ac92a4
 				<div class="elementor-element elementor-element-0c2dd12 elementor-widget elementor-widget-button" data-id="0c2dd12" data-element_type="widget" data-e-type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="button.default">
 				<div class="elementor-widget-container">
 									<div class="elementor-button-wrapper">
-					<a class="elementor-button elementor-button-link elementor-size-sm" href="/appointment/">
+					<a class="elementor-button elementor-button-link elementor-size-sm" href="/contact-us/">
 						<span class="elementor-button-content-wrapper">
-									<span class="elementor-button-text">Book A Appointment</span>
+									<span class="elementor-button-text">Contact Us</span>
 					</span>
 					</a>
 				</div>

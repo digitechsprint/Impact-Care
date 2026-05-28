@@ -145,7 +145,7 @@ export const HEADER_HTML = `<div class="ekit-template-content-markup ekit-templa
 </ul>
 </li>
 <li id="menu-item-4274" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4274 nav-item elementskit-mobile-builder-content" data-vertical-menu=750px><a href="/contact-us/" class="ekit-menu-nav-link">Contact Us</a></li>
-<li id="menu-item-5317" class="mobile-menu menu-item menu-item-type-post_type menu-item-object-page menu-item-5317 nav-item elementskit-mobile-builder-content" data-vertical-menu=750px><a href="/appointment/" class="ekit-menu-nav-link">Book Appointment</a></li>
+<li id="menu-item-5317" class="mobile-menu menu-item menu-item-type-post_type menu-item-object-page menu-item-5317 nav-item elementskit-mobile-builder-content" data-vertical-menu=750px><a href="/contact-us/" class="ekit-menu-nav-link">Contact Us</a></li>
 </ul><div class="elementskit-nav-identity-panel"><button class="elementskit-menu-close elementskit-menu-toggler" type="button">X</button></div></div>
 			<div class="elementskit-menu-overlay elementskit-menu-offcanvas-elements elementskit-menu-toggler ekit-nav-menu--overlay"></div>        </nav>
 						</div>
@@ -155,9 +155,9 @@ export const HEADER_HTML = `<div class="ekit-template-content-markup ekit-templa
 				<div class="elementor-element elementor-element-4bcb627 elementor-align-right elementor-widget elementor-widget-button" data-id="4bcb627" data-element_type="widget" data-e-type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="button.default">
 				<div class="elementor-widget-container">
 									<div class="elementor-button-wrapper">
-					<a class="elementor-button elementor-button-link elementor-size-sm" href="/appointment/">
+					<a class="elementor-button elementor-button-link elementor-size-sm" href="/contact-us/">
 						<span class="elementor-button-content-wrapper">
-									<span class="elementor-button-text">Book Appointment</span>
+									<span class="elementor-button-text">Contact Us</span>
 					</span>
 					</a>
 				</div>
