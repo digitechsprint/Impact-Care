@@ -563,3 +563,11 @@ body {
     justify-content: center !important;
 }
 
+
+/* Footer Social Media Alignment and Visibility */
+.ekit_social_media { display: flex !important; flex-direction: row !important; flex-wrap: nowrap !important; align-items: center !important; gap: 15px !important; padding: 0 !important; margin: 0 !important; list-style: none !important; }
+.ekit_social_media li { display: inline-block !important; margin: 0 !important; padding: 0 !important; }
+.ekit_social_media a { display: flex !important; align-items: center !important; justify-content: center !important; width: 40px !important; height: 40px !important; background-color: rgba(255, 255, 255, 0.1) !important; border: 1px solid rgba(255, 255, 255, 0.2) !important; border-radius: 50% !important; color: #ffffff !important; text-decoration: none !important; transition: all 0.3s ease !important; }
+.ekit_social_media a i { font-size: 16px !important; color: #ffffff !important; opacity: 1 !important; }
+.ekit_social_media a:hover { background-color: #F8AE22 !important; border-color: #F8AE22 !important; color: #111111 !important; transform: translateY(-3px) !important; }
+.ekit_social_media a:hover i { color: #111111 !important; }
