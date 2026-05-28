@@ -9,7 +9,8 @@ import {
 } from "@/lib/pages";
 import { ProductsCatalog } from "@/components/products/ProductsCatalog";
 import { ProductDetailPage } from "@/components/products/ProductDetailPage";
-import { parseWordPressLayout, parseWordPressDetailLayout } from "@/lib/server-parser";
+import { HomeSlider } from "@/components/home/HomeSlider";
+import { parseWordPressLayout, parseWordPressDetailLayout, parseHomeSliderLayout } from "@/lib/server-parser";
 import { products } from "@/lib/data/products";
 import { HtmlBlock } from "@/components/ui/HtmlBlock";
 
@@ -150,7 +151,29 @@ export default async function DynamicPage({ params }: PageProps) {
     );
   }
 
-  // 2. Intercept any individual product detail page
+  // 2. Intercept the home slider page ONLY
+  if (urlPath === "/home-slider") {
+    const rawHtml = getPageBodyHtml(page.fileKey);
+    const elementorClass = page.fileKey === "index" ? ".elementor-13" : ".elementor-10180";
+    const layout = parseHomeSliderLayout(rawHtml, elementorClass);
+
+    return (
+      <WordPressPage
+        bodyHtml={rawHtml}
+        bodyClass={page.bodyClass}
+        elementorConfig={page.elementorConfig}
+      >
+        <HtmlBlock html={layout.headStyles + layout.preloader + layout.cursor + layout.header} />
+        <HomeSlider />
+        <div className={`elementor ${elementorClass.replace('.', '')}`}>
+          <HtmlBlock html={layout.lowerContent} />
+        </div>
+        <HtmlBlock html={layout.footer} />
+      </WordPressPage>
+    );
+  }
+
+  // 3. Intercept any individual product detail page
   if (urlPath.startsWith("/products/")) {
     const productSlug = urlPath.replace("/products/", "");
     const product = products.find(p => p.slug === productSlug);
