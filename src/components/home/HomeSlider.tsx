@@ -58,7 +58,7 @@ export function HomeSlider() {
             }}
           >
             {/* Overlay for better text readability */}
-            <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", background: "rgba(0, 25, 55, 0.4)" }}></div>
+            <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", background: "rgba(0, 25, 55, 0.2)" }}></div>
             
             <div style={{ position: "relative", zIndex: 2, maxWidth: "1200px", margin: "0 auto", padding: "0 20px", width: "100%" }}>
               <div
@@ -104,11 +104,17 @@ export function HomeSlider() {
                 <p
                   style={{
                     fontSize: "18px",
-                    color: "rgba(255, 255, 255, 0.9)",
+                    color: "#ffffff",
                     fontFamily: "'Inter', sans-serif",
                     lineHeight: 1.6,
                     marginBottom: "40px",
-                    maxWidth: "600px"
+                    maxWidth: "600px",
+                    background: "rgba(0, 0, 0, 0.3)",
+                    backdropFilter: "blur(12px)",
+                    padding: "20px 30px",
+                    borderRadius: "16px",
+                    border: "1px solid rgba(255, 255, 255, 0.1)",
+                    borderLeft: "4px solid rgba(255,255,255,0.7)"
                   }}
                 >
                   {slide.description}
