@@ -42,6 +42,7 @@ export function HtmlBlock({
       if (cleanHref === cleanPath) {
         window.scrollTo({ top: 0, behavior: "smooth" });
       } else {
+        window.scrollTo(0, 0);
         router.push(href);
       }
     } else if (href.startsWith(window.location.origin)) {
@@ -52,6 +53,7 @@ export function HtmlBlock({
       if (cleanHref === cleanPath) {
         window.scrollTo({ top: 0, behavior: "smooth" });
       } else {
+        window.scrollTo(0, 0);
         router.push(relativeHref);
       }
     }
