@@ -106,4 +106,40 @@ export function useThemeScripts() {
     setTimeout(updateActiveMenu, 100);
     setTimeout(updateActiveMenu, 500);
   }, [pathname]);
+  // Bulletproof mobile menu toggler to avoid React/ElementsKit conflicts
+  useEffect(() => {
+    const handleMobileToggle = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      
+      // Handle hamburger or close button click
+      const toggler = target.closest('.elementskit-menu-toggler');
+      if (toggler) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        const nav = toggler.closest('.ekit_menu_responsive_mobile') || document.querySelector('.ekit_menu_responsive_mobile');
+        if (nav) {
+          const container = nav.querySelector('.elementskit-menu-container');
+          container?.classList.toggle('active');
+        }
+        return;
+      }
+
+      // Handle closing when clicking on a link
+      const anchor = target.closest('a');
+      if (anchor) {
+        const nav = anchor.closest('.ekit_menu_responsive_mobile') || document.querySelector('.ekit_menu_responsive_mobile');
+        if (nav) {
+          const container = nav.querySelector('.elementskit-menu-container');
+          container?.classList.remove('active');
+        }
+      }
+    };
+
+    document.addEventListener('click', handleMobileToggle, true); // Use capture phase to ensure we intercept it
+
+    return () => {
+      document.removeEventListener('click', handleMobileToggle, true);
+    };
+  }, []);
 }

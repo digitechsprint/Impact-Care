@@ -856,26 +856,47 @@ body {
   .elementor-3822 .elementskit-menu-container:not(.active) .elementskit-navbar-nav {
     display: none !important;
   }
-
-  /* When offcanvas is active, revert the flex styling so items stack vertically */
-  .elementor-3822 .elementskit-menu-container.active .elementskit-navbar-nav {
-    display: block !important;
-    width: 100% !important;
-    padding-top: 20px !important;
-    text-align: center !important;
-  }
-
-  /* ========================================= */
-  /* OFFCANVAS MENU DESIGN MATCHING SCREENSHOT */
-  /* ========================================= */
-
-  /* Offcanvas container */
+  /* Offcanvas container - Full Screen Style matching Screenshot */
   .elementor-3822 .elementskit-menu-container {
-    background-color: #fcfcfc !important;
-    /* Light background */
+    position: fixed !important;
+    top: 0 !important;
+    left: -100vw !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    height: 100vh !important;
+    max-height: 100vh !important;
+    border-radius: 0 !important;
+    background-color: #ffffff !important;
     padding: 0 !important;
     display: flex !important;
     flex-direction: column !important;
+    z-index: 999999 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: left 0.3s ease, opacity 0.3s ease, visibility 0.3s ease !important;
+    overflow-y: auto !important;
+    box-shadow: none !important;
+  }
+
+  .elementor-3822 .elementskit-menu-container.active {
+    left: 0 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  /* Vertically center the menu items */
+  .elementor-3822 .elementskit-menu-container.active .elementskit-navbar-nav {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    margin: auto 0 !important;
+    width: 100% !important;
+    padding-top: 0 !important;
+    text-align: center !important;
+  }
+
+  .elementskit-menu-overlay {
+    display: none !important;
   }
 
   /* Top identity panel (Logo & Close Button) */
@@ -1185,5 +1206,10 @@ body {
 @media (max-width: 1024px) {
     .elementor-3822 .elementor-element.elementor-element-78b1cea .elementskit-menu-container {
         background-color: transparent !important;
+    }
+    
+    /* FIX: Ensure the offcanvas menu has a white background when open */
+    .elementor-3822 .elementor-element.elementor-element-78b1cea .elementskit-menu-container.active {
+        background-color: #ffffff !important;
     }
 }
