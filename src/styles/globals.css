@@ -1007,3 +1007,11 @@ body {
     fill: #ffffff !important;
   }
 }
+
+/* Hide Mobile elements on desktop screens */
+@media (min-width: 768px) {
+  .mobile-whatsapp-float,
+  .mobile-menu-quote-btn-wrapper {
+    display: none !important;
+  }
+}
