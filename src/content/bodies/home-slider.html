@@ -1,5 +1,29 @@
-<html><head></head>
-
+<html><head>
+    <style id="home-slider-responsive-fixes">
+        @media (max-width: 768px) {
+            .bg-section .e-con-inner {
+                flex-direction: column !important;
+                align-items: center !important;
+                text-align: center !important;
+            }
+            .bg-section .e-con-inner > .e-con.e-child {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            .cta-img-1 img, .cta-img-2 img {
+                width: 100% !important;
+                max-width: 280px !important;
+                height: auto !important;
+                margin: 20px auto !important;
+                display: block !important;
+            }
+            .highlighted-btn .elementor-button-wrapper {
+                display: flex !important;
+                justify-content: center !important;
+            }
+        }
+    </style>
+</head>
 <body>
 	<div class="preloader">
 		<div class="loading-container">
