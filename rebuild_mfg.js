@@ -14,14 +14,14 @@ const newContent = `
 
     <!-- Section 1: Quality Assurance -->
     <div class="elementor-element e-flex e-con-boxed e-con e-parent" style="margin-top: 40px;">
-        <div class="e-con-inner mfg-grid-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; width: 100%;">
+        <div class="e-con-inner mfg-grid-container">
             <div class="mfg-image-wrapper">
                 <img src="/assets/uploads/images/pharma_quality_control.png" alt="Pharma Quality Control" style="width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
             </div>
             <div class="mfg-text-wrapper">
                 <h3 style="color: #00a99d; font-size: 18px; font-weight: 600; text-transform: uppercase; margin-bottom: 10px; font-family: var(--e-global-typography-primary-font-family);">Quality Assurance</h3>
                 <h2 style="font-size: 36px; font-weight: 700; color: #222; margin-bottom: 25px; line-height: 1.2; font-family: var(--e-global-typography-primary-font-family);">Built on quality at every stage</h2>
-                <p style="font-size: 16px; color: #555; line-height: 1.8; text-align: justify; font-family: var(--e-global-typography-text-font-family);">
+                <p style="font-size: 16px; color: #555; line-height: 1.8; text-align: left; font-family: var(--e-global-typography-text-font-family);">
                     <strong>Impact Health Care - Medicine manufacturing Company.</strong><br><br>
                     We believe that continuously attaining high levels of quality in all we do is essential for strengthening the foundation of a responsible brand. Each stage of our operations, including purchasing, production, transportation, and safe product disposal, is infused with quality.<br><br>
                     The previous few years have been devoted to improving our QMS to successfully meet and surpass the demands of many regulatory agencies, including the US FDA, MHRA, TGA, MCC, and WHO. To guarantee quality, the Quality Control (QC) team develops and puts into effect strict procedures during the manufacturing process. Post-manufacturing, strict pharmacovigilance and destruction of faulty and expired items enhance the quality of products.
@@ -32,26 +32,26 @@ const newContent = `
 
     <!-- Section 2: Maintaining Quality -->
     <div class="elementor-element e-flex e-con-boxed e-con e-parent">
-        <div class="e-con-inner mfg-grid-container reverse" style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; width: 100%;">
-            <div class="mfg-text-wrapper" style="grid-column: 1;">
+        <div class="e-con-inner mfg-grid-container reverse">
+            <div class="mfg-text-wrapper">
                 <h2 style="font-size: 36px; font-weight: 700; color: #222; margin-bottom: 25px; line-height: 1.2; font-family: var(--e-global-typography-primary-font-family);">Maintaining Quality</h2>
-                <p style="font-size: 16px; color: #555; line-height: 1.8; text-align: justify; font-family: var(--e-global-typography-text-font-family);">
+                <p style="font-size: 16px; color: #555; line-height: 1.8; text-align: left; font-family: var(--e-global-typography-text-font-family);">
                     We believe that making sufficient and prompt investments to improve our quality management procedures will pay off in the long run by reducing the cost of failure and supporting legal compliance.<br><br>
                     The cutting-edge production facilities adhere to both national and international standards and are cGMP compliant. The Impact Quality Control Laboratories have finished the first phase of the Laboratory Information Management System (LIMS), which greatly enhances data management.<br><br>
                     Our facilities maintain quality by using industry best practices, adopting the latest technologies, and renewing their equipment regularly. We built an effective framework to produce goods that meet demanding requirements and in-process inspections, which leads to superior product quality.
                 </p>
             </div>
-            <div class="mfg-image-wrapper" style="grid-column: 2;">
+            <div class="mfg-image-wrapper">
                 <img src="/assets/uploads/images/pharma_production_line.png" alt="Pharma Production Line" style="width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
             </div>
         </div>
     </div>
 
     <!-- Section 3: Tests Conducted (Full Width Banner) -->
-    <div class="elementor-element e-flex e-con-boxed e-con e-parent" style="background-color: #f8fbfa; padding: 60px 0; border-radius: 12px; width: 90%; max-width: 1140px; margin: 0 auto;">
+    <div class="elementor-element e-flex e-con-boxed e-con e-parent tests-conducted-container" style="background-color: #f8fbfa; padding: 60px 0; border-radius: 12px; width: 90%; max-width: 1140px; margin: 0 auto;">
         <div class="e-con-inner" style="display: flex; flex-direction: column; align-items: center; text-align: center; width: 100%;">
             <h2 style="font-size: 32px; font-weight: 700; color: #222; margin-bottom: 40px; font-family: var(--e-global-typography-primary-font-family);">Tests Conducted By The Impact Quality Control Team</h2>
-            <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+            <div class="tests-conducted-badges" style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
                 <div style="display: flex; align-items: center; background: white; padding: 15px 30px; border-radius: 50px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
                     <i class="fas fa-check-circle" style="color: #00a99d; font-size: 24px; margin-right: 15px;"></i>
                     <span style="font-size: 18px; font-weight: 600; color: #444;">Purity</span>
