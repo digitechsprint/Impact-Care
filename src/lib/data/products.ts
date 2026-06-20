@@ -103,7 +103,7 @@ export const products: Product[] = [
   {
     "id": 10,
     "title": "Cefezone 1gm",
-    "slug": "cefezone-1gm",
+    "slug": "cefaxone-1gm",
     "category": "Antibiotic",
     "dosageForm": "Injection",
     "composition": "Ceftriaxone Sodium USP 1 Gm",
@@ -113,7 +113,7 @@ export const products: Product[] = [
   {
     "id": 11,
     "title": "Cefezone -S 1.5gm",
-    "slug": "cefezone-s-1-5gm",
+    "slug": "cefzone-s-1-5gm",
     "category": "Antibiotic",
     "dosageForm": "Injection",
     "composition": "Ceftriaxone Sodium USP 1 Gm, Sulbactam Sodium USP 500 Mg",

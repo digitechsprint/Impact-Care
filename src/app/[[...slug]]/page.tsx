@@ -183,6 +183,12 @@ export default async function DynamicPage({ params }: PageProps) {
     const templateHtml = getPageBodyHtml("product__acofan-tablet");
     const layout = parseWordPressDetailLayout(templateHtml);
 
+    // Dynamically replace the hardcoded "Acofan 100mg/500mg Tablet" name with the current product title
+    const dynamicHeroBanner = layout.heroBanner
+      .replace(/>Acofan 100mg\/500mg Tablet</gi, `>${product.title}<`)
+      .replace(/Home \/ Products \/ Acofan 100mg\/500mg Tablet/gi, `Home / Products / ${product.title}`);
+
+
     return (
       <WordPressPage
         bodyHtml={templateHtml}
@@ -191,7 +197,7 @@ export default async function DynamicPage({ params }: PageProps) {
       >
         <HtmlBlock html={layout.headStyles + layout.preloader + layout.cursor + layout.header} />
         <div className="elementor elementor-10083">
-          <HtmlBlock html={layout.heroBanner} />
+          <HtmlBlock html={dynamicHeroBanner} />
           <ProductDetailPage product={product} />
         </div>
         <HtmlBlock html={layout.footer} />
@@ -210,4 +216,4 @@ export default async function DynamicPage({ params }: PageProps) {
     />
   );
 }
-// Trigger hot-reload 5
+// Trigger hot-reload 97
