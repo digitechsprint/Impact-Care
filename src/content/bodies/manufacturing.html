@@ -1,4 +1,4 @@
-<html><head><style id="top-hero-banner-styles">
+<style id="top-hero-banner-styles">
         /* Scoped styles only for the very top hero banner */
         .top-hero-banner::before {
             content: '';
@@ -39,8 +39,8 @@
             background: #fdfcfc;
         }
         .mfg-grid-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+            display: grid !important;
+            grid-template-columns: 1fr 1fr !important;
             gap: 80px;
             align-items: center;
             width: 100%;
@@ -152,7 +152,7 @@
             }
         }
     </style>
-    </head><body><div class="preloader">
+    <div class="preloader">
 		<div class="loading-container">
 			<div class="loading"></div>
 			<div id="loading-icon"><img src="/assets/uploads/images/Logo.png" alt="Preloader"></div>
@@ -591,5 +591,4 @@
 					</div>
 				</div>
 				</div>
-		</div>
-</body></html>
+		</div>

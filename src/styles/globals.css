@@ -1284,4 +1284,9 @@ body {
   100% {
     transform: translateY(0);
   }
+}
+
+.elementor-element-2f5529d {
+  padding-left: 20px !important;
+  box-sizing: border-box !important;
 }
