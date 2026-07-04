@@ -21,8 +21,8 @@ body {
 
 /* Header Logo adjustments - Premium Balance */
 .ata-site-logo-img {
-  max-height: 65px !important;
-  /* Perfectly balanced: prominent but not overly bulky */
+  max-height: 48px !important;
+  /* Thinner header adjustment */
   width: auto !important;
   object-fit: contain !important;
   mix-blend-mode: multiply;
@@ -47,10 +47,10 @@ body {
 
 /* Container Spacing for Header */
 .ekit-template-content-header .e-con.e-parent {
-  padding-top: 10px !important;
-  padding-bottom: 10px !important;
-  min-height: 85px !important;
-  /* Prevents the header from feeling too cramped or too fat */
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+  min-height: 60px !important;
+  /* Made thinner per user request */
 }
 
 /* Perfect Vertical Alignment */
@@ -1299,4 +1299,133 @@ body {
 .elementor-element-2f5529d {
   padding-left: 20px !important;
   box-sizing: border-box !important;
+}
+
+@media (max-width: 992px) {
+  .stat-item {
+    border-right: none !important;
+  }
+  .stats-banner-wrapper {
+    margin-top: -30px !important;
+    width: 95% !important;
+  }
+}
+
+/* New About Section Styles */
+.new-about-section {
+  padding: 30px 5% 80px 5%;
+  background: #ffffff;
+  font-family: 'Inter', sans-serif;
+}
+.new-about-section .about-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.new-about-section .about-small-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.new-about-section .about-small-heading span {
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #1e293b;
+  font-size: 14px;
+}
+.new-about-section .about-main-title {
+  font-size: clamp(32px, 4vw, 50px);
+  font-weight: 800;
+  color: #1e293b;
+  line-height: 1.2;
+  margin-bottom: 30px;
+  letter-spacing: -1px;
+}
+.new-about-section .text-blue {
+  color: #2b3a8c;
+}
+.new-about-section .about-desc {
+  font-size: 16px;
+  color: #64748b;
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+.new-about-section .about-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 32px;
+  border: 2px solid #2b3a8c;
+  border-radius: 8px;
+  color: #2b3a8c !important;
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+}
+.new-about-section .about-btn:hover {
+  background: #2b3a8c;
+  color: #ffffff !important;
+}
+.new-about-section .about-image-wrapper {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  height: 600px;
+}
+.new-about-section .about-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.new-about-section .about-floating-box {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  width: 280px;
+}
+.new-about-section .about-floating-icons {
+  display: flex;
+  margin-bottom: 15px;
+}
+.new-about-section .floating-icon-item {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #e2e8f0;
+  margin-right: -10px;
+  position: relative;
+}
+.new-about-section .about-floating-text {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1.4;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+@media (max-width: 992px) {
+  .new-about-section .about-container {
+    grid-template-columns: 1fr;
+  }
+  .new-about-section .about-image-wrapper {
+    height: 400px;
+  }
 }
