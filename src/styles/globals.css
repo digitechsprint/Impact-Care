@@ -1583,3 +1583,121 @@ body {
     max-width: 130px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
+
+/* Home Divisions Section */
+.home-divisions-section {
+    padding: 80px 20px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+}
+
+.home-divisions-container {
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+}
+
+.home-divisions-subtitle {
+    color: #2b3a8c;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-family: 'Inter', sans-serif;
+    position: relative;
+    display: inline-block;
+}
+.home-divisions-subtitle::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 2px;
+    background-color: #2b3a8c;
+    margin: 8px auto 0;
+}
+
+.home-divisions-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: #1e293b;
+    margin-bottom: 50px;
+    font-family: 'Inter', sans-serif;
+}
+
+.divisions-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.division-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 30px 20px;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+}
+
+.division-card:hover {
+    box-shadow: 0 10px 30px rgba(43, 58, 140, 0.1);
+    transform: translateY(-5px);
+    border-color: #2b3a8c;
+}
+
+.division-icon {
+    width: 70px;
+    height: 70px;
+    background-color: #f8fafc;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.division-card:hover .division-icon {
+    background-color: #2b3a8c;
+}
+
+.division-card:hover .division-icon svg {
+    stroke: #ffffff;
+}
+
+.division-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 15px;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.3;
+}
+
+.division-link {
+    font-size: 12px;
+    font-weight: 600;
+    color: #2b3a8c;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: auto;
+    font-family: 'Inter', sans-serif;
+}
+
+.division-link svg {
+    transition: transform 0.2s ease;
+}
+
+.division-link:hover svg {
+    transform: translateX(3px);
+}
+
