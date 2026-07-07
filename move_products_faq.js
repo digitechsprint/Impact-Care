@@ -85,37 +85,15 @@ const productsFaqHtml = `
 </div>
 `;
 
-// 2. Find the Testimonial section
-let inserted = false;
-$('h3').each(function() {
-    if ($(this).text().includes('Testimonial')) {
-        let testimonialSection = $(this).closest('.elementor-element.e-con-full');
-        if (testimonialSection.length && !inserted) {
-            testimonialSection.after(productsFaqHtml);
-            inserted = true;
-        }
-    }
-});
-
-// If not found by h3, try finding by text anywhere
-if (!inserted) {
-    $('*').each(function() {
-        if ($(this).text().includes('Testimonial') && $(this).children().length === 0) {
-            let testimonialSection = $(this).closest('.elementor-element.e-con-full');
-            if (testimonialSection.length && !inserted) {
-                testimonialSection.after(productsFaqHtml);
-                inserted = true;
-            }
-        }
-    });
-}
-
-// Fallback just in case
-if (!inserted) {
+// 2. Insert into .elementor-947 so Next.js parser picks it up as lowerContent
+let mainContent = $('.elementor-947');
+if (mainContent.length) {
+    mainContent.append(productsFaqHtml);
+} else {
     $('#dummy-root').append(productsFaqHtml);
 }
 
 let finalHtml = $('#dummy-root').html();
 
 fs.writeFileSync('src/content/bodies/products.html', finalHtml);
-console.log("Moved FAQ section to exactly below the Testimonial section.");
+console.log("Moved FAQ section to exactly above the footer (inside elementor-947).");
