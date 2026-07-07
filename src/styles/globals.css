@@ -1114,13 +1114,16 @@ body {
   /* Fix Scroll Down Indicator overlap on hero sections (Blog, Manufacturing, etc) */
   .page-header.bg-section,
   .top-hero-banner,
-  .home-slider-hero {
-    padding-bottom: 50px !important;
+  .home-slider-hero,
+  .elementor-element-01bbc35,
+  .elementor-element-bef7d76,
+  .elementor-10179 .bg-section {
+    padding-bottom: 90px !important;
   }
 
   .scroll-indicator-container {
-    bottom: 15px !important;
-    transform: translateX(-50%) scale(0.85) !important;
+    bottom: 5px !important;
+    transform: translateX(-50%) scale(0.75) !important;
   }
 
   /* ========================================= */
@@ -1717,6 +1720,13 @@ body {
 /* Override for home page scroll indicator */
 .elementor-10179 .scroll-indicator-container {
   bottom: 160px !important;
+}
+
+@media (max-width: 767px) {
+  .elementor-10179 .scroll-indicator-container {
+    bottom: 5px !important;
+    transform: translateX(-50%) scale(0.75) !important;
+  }
 }
 
 /* NEW ABOUT US PAGE STYLES */
@@ -4910,29 +4920,35 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    align-items: center;
+    align-items: stretch;
     position: relative;
 }
 .q-intro-v3-image-wrapper {
-    width: 60%;
+    width: 55%;
     position: relative;
     z-index: 1;
+    display: flex;
 }
 .q-intro-v3-image-wrapper img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 20px;
     box-shadow: 0 30px 60px rgba(0,0,0,0.1);
 }
 .q-intro-v3-content {
-    width: 50%;
+    width: 55%;
     background: #ffffff;
-    padding: 60px;
+    padding: 50px;
     border-radius: 20px;
     box-shadow: 0 40px 80px rgba(0,0,0,0.08);
-    position: absolute;
-    right: 0;
+    position: relative;
     z-index: 2;
     border-left: 5px solid #00b853;
+    margin-left: -10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .q-intro-v3-badge {
     display: inline-flex;
@@ -4989,7 +5005,7 @@ body {
 @media (max-width: 992px) {
     .q-intro-v3-container { flex-direction: column; }
     .q-intro-v3-image-wrapper, .q-intro-v3-content { width: 100%; position: relative; }
-    .q-intro-v3-content { margin-top: -50px; padding: 40px; }
+    .q-intro-v3-content { margin-top: -50px; padding: 40px; margin-left: 0; }
 }
 
 /* 2. Quality Policy V3 (Premium Parallax + Glassmorphism) */
