@@ -1737,7 +1737,7 @@ body {
 
 
 /* Pull home page hero UP under the header */
-.elementor-10179 { margin-top: -60px !important; position: relative; z-index: 1; }
+.elementor-10179 { position: relative; z-index: 1; }
 .ekit-template-content-header { position: relative !important; z-index: 99 !important; }
 
 
