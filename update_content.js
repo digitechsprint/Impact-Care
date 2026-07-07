@@ -37,7 +37,7 @@ for (const file of files) {
     // 1. Replace phone link hrefs
     const telRegex = /href="tel:[^"]+"/g;
     if (telRegex.test(content)) {
-        content = content.replace(telRegex, 'href="tel:+918595872604"');
+        content = content.replace(telRegex, 'href="tel:+919999976844"');
         modified = true;
     }
 
@@ -46,12 +46,13 @@ for (const file of files) {
         '+1 (213) 465 789',
         '+01-787-582-568',
         '+91 - 123 456 7890',
-        '+918595872604'
+        '+918595872604',
+        '+(91) 8595-872-604'
     ];
     for (const phone of phoneTexts) {
         if (content.includes(phone)) {
             // Split and join is safer for global replace without regex escaping
-            content = content.split(phone).join('+(91) 8595-872-604');
+            content = content.split(phone).join('+91 9999976844');
             modified = true;
         }
     }
