@@ -1,9 +1,27 @@
 const fs = require('fs');
 const cheerio = require('cheerio');
-const html = fs.readFileSync('src/content/bodies/about-us.html', 'utf8');
-const $ = cheerio.load(html);
 
-console.log('bfc9648 text:', $('[data-id="bfc9648"]').text().replace(/\s+/g, ' ').substring(0, 200));
-console.log('bf4debc text:', $('[data-id="bf4debc"]').text().replace(/\s+/g, ' ').substring(0, 200));
-console.log('6e38495 text:', $('[data-id="6e38495"]').text().replace(/\s+/g, ' ').substring(0, 200));
-console.log('d7aa488 text:', $('[data-id="d7aa488"]').text().replace(/\s+/g, ' ').substring(0, 200));
+let html = fs.readFileSync('src/content/bodies/products.html', 'utf8');
+const $ = cheerio.load('<div id="dummy-root">' + html + '</div>', { decodeEntities: false }, false);
+
+let howWeWorkCount = 0;
+let testimonialCount = 0;
+
+$('*').each(function() {
+    if ($(this).children().length === 0) {
+        if ($(this).text().includes('How We Work')) {
+            console.log('How We Work element:', $(this).prop('tagName'));
+            howWeWorkCount++;
+            // Find the section parent
+            let parent = $(this).closest('.e-con-full');
+            console.log('Parent classes:', parent.attr('class'));
+        }
+        if ($(this).text().includes('Testimonials')) {
+            console.log('Testimonials element:', $(this).prop('tagName'));
+            testimonialCount++;
+             let parent = $(this).closest('.e-con-full');
+             console.log('Parent classes:', parent.attr('class'));
+        }
+    }
+});
+console.log('Done');
