@@ -8,6 +8,14 @@ import { ProductCard } from "./ProductCard";
 export function ProductsCatalog() {
   const [activeCategory, setActiveCategory] = useState("All");
 
+  React.useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const cat = params.get("category");
+    if (cat) {
+      setActiveCategory(cat);
+    }
+  }, []);
+
   const categories = useMemo(() => {
     const cats = new Set<string>();
     products.forEach((p) => {

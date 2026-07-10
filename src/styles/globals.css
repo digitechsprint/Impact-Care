@@ -7285,3 +7285,28 @@ body {
         display: none !important;
     }
 }
+
+/* Footer Overlap Fixes */
+.elementskit-infobox.media {
+    display: flex !important;
+    align-items: center !important;
+    gap: 15px !important;
+}
+
+.elementskit-infobox.media .elementskit-box-header {
+    flex-shrink: 0 !important;
+    margin-right: 0 !important;
+    float: none !important;
+    position: static !important;
+}
+
+.elementskit-infobox.media .box-body {
+    flex: 1 !important;
+    word-break: break-word !important;
+}
+
+.elementskit-infobox.media .elementskit-info-box-title {
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1.4 !important;
+}

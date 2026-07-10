@@ -171,6 +171,45 @@
         display: none;
     }
 }
+
+/* Custom Header Dropdown */
+.custom-dropdown-container {
+    position: relative;
+}
+.custom-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #ffffff;
+    min-width: 200px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    padding: 10px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+.custom-dropdown-container:hover .custom-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.custom-dropdown-item {
+    display: block;
+    padding: 10px 20px;
+    color: #4b5563;
+    text-decoration: none;
+    font-size: 13px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    transition: background 0.2s, color 0.2s;
+}
+.custom-dropdown-item:hover {
+    background: #f8f9fa;
+    color: #0d2657;
+}
 </style>
 
 <header class="custom-header-wrapper">
@@ -207,7 +246,19 @@
                 <a href="/" class="custom-nav-link">HOME</a>
                 <a href="/about-us/" class="custom-nav-link">ABOUT US</a>
                 <a href="/divisions/" class="custom-nav-link custom-nav-item-has-children">DIVISIONS <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
-                <a href="/products/" class="custom-nav-link custom-nav-item-has-children">PRODUCTS <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+                
+                <div class="custom-dropdown-container">
+                    <a href="/products/" class="custom-nav-link custom-nav-item-has-children">PRODUCTS <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+                    <div class="custom-dropdown-menu">
+                        <a href="/products/?category=Syrups%20%26%20Suspensions" class="custom-dropdown-item">Syrups & Suspensions</a>
+                        <a href="/products/?category=Tablets" class="custom-dropdown-item">Tablets</a>
+                        <a href="/products/?category=Injections" class="custom-dropdown-item">Injections</a>
+                        <a href="/products/?category=Drops" class="custom-dropdown-item">Drops</a>
+                        <a href="/products/?category=Creams%20%26%20Ointments" class="custom-dropdown-item">Creams & Ointments</a>
+                        <a href="/products/?category=Capsules" class="custom-dropdown-item">Capsules</a>
+                    </div>
+                </div>
+
                 <a href="/quality/" class="custom-nav-link">QUALITY</a>
                 <a href="/rd/" class="custom-nav-link">R&D</a>
                 <a href="/manufacturing/" class="custom-nav-link">MANUFACTURING</a>
@@ -221,6 +272,10 @@
         </div>
     </div>
 </header>
+
+\n\n
+
+\n\n
 
 
 <div data-elementor-type="wp-page" data-elementor-id="9834" class="elementor elementor-9834">
