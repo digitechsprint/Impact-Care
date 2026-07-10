@@ -143,36 +143,73 @@
 .custom-dropdown-menu {
     position: absolute;
     top: 100%;
-    left: 0;
+    left: 50%;
     background: #ffffff;
-    min-width: 200px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    border-radius: 4px;
-    padding: 10px 0;
+    min-width: 480px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    border-radius: 12px;
+    padding: 24px;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(10px);
-    transition: all 0.3s ease;
+    transform: translateX(-50%) translateY(15px);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 1000;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 24px;
+    border: 1px solid #f1f5f9;
+}
+.custom-dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 12px;
+    height: 12px;
+    background: #ffffff;
+    border-top: 1px solid #f1f5f9;
+    border-left: 1px solid #f1f5f9;
 }
 .custom-dropdown-container:hover .custom-dropdown-menu {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0);
+    transform: translateX(-50%) translateY(0);
 }
 .custom-dropdown-item {
-    display: block;
-    padding: 10px 20px;
-    color: #4b5563;
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    color: #334155;
     text-decoration: none;
-    font-size: 13px;
+    font-size: 14px;
     font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    transition: background 0.2s, color 0.2s;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+}
+.custom-dropdown-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    height: 50%;
+    width: 3px;
+    background: #3b82f6;
+    transform: translateY(-50%) scaleY(0);
+    transition: transform 0.2s ease;
+    border-radius: 4px;
 }
 .custom-dropdown-item:hover {
-    background: #f8f9fa;
+    background: #f8fafc;
     color: #0d2657;
+    padding-left: 24px;
+}
+.custom-dropdown-item:hover::before {
+    transform: translateY(-50%) scaleY(1);
 }
 </style>
 
@@ -726,24 +763,30 @@
 	</div>
 
 	<!-- Chairman Message Section -->
-	<div class="chairman-message-section">
+	<div class="chairman-message-section-exact">
 		<div class="chairman-container">
-			<div class="chairman-card">
-				<div class="chairman-image-col">
-					<!-- Chairman Avatar -->
-					<img src="/assets/images/chairman-avatar-2.png" alt="Chairman" class="chairman-img">
-				</div>
-				<div class="chairman-content-col">
-					<h4 class="chairman-subtitle">CHAIRMAN'S MESSAGE</h4>
-					<div class="chairman-quote-icon">“</div>
-					<p class="chairman-text">Our vision is to become a globally respected pharmaceutical company recognized for quality, innovation and ethical practices.</p>
-					<p class="chairman-text">We will continue to invest in our people, technologies and partnerships to create a healthier tomorrow for generations to come.</p>
-					
-					<!-- Replace with real signature image -->
-					<img src="https://placehold.co/200x80/eeeeee/999999?text=Signature" alt="Signature" class="chairman-signature">
-					<div class="chairman-name">Name Here</div>
-					<div class="chairman-designation">Chairman &amp; Managing Director</div>
-				</div>
+			<div class="chairman-card-exact">
+                <div class="chairman-quote-wrap">
+                    <span class="quote-dot-left"></span>
+                    <div class="quote-circle">
+                        “
+                    </div>
+                    <span class="quote-dot-right"></span>
+                </div>
+				
+                <h4 class="chairman-subtitle-exact">CHAIRMAN'S MESSAGE</h4>
+				
+                <div class="chairman-divider-exact">
+                    <div class="divider-line"></div>
+                    <div class="divider-cube"></div>
+                    <div class="divider-line"></div>
+                </div>
+
+				<p class="chairman-text-exact">Our vision is to become a globally respected<br>pharmaceutical company recognized for<br><span class="chairman-highlight">quality, innovation</span> and <span class="chairman-highlight">ethical practices</span>.</p>
+				
+                <div class="chairman-small-dot"></div>
+
+                <p class="chairman-text-exact">We will continue to invest in our people, technologies<br>and partnerships to create a <span class="chairman-highlight">healthier tomorrow</span><br>for generations to come.</p>
 			</div>
 		</div>
 	</div>
@@ -1673,228 +1716,6 @@
 </div>
 
 	</div>
-	<div class="elementor-element elementor-element-fefcfe5 e-flex e-con-boxed e-con e-parent" data-id="fefcfe5" data-element_type="container" data-e-type="container">
-		<div class="e-con-inner">
-			<div class="elementor-element elementor-element-3921e95 e-con-full e-flex e-con e-child" data-id="3921e95" data-element_type="container" data-e-type="container">
-				<div class="elementor-element elementor-element-b0884cd section-title at-heading-animation at-animation-heading-none elementor-invisible elementor-widget elementor-widget-heading" data-id="b0884cd" data-element_type="widget" data-e-type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="heading.default">
-					<div class="elementor-widget-container">
-						<h3 class="elementor-heading-title elementor-size-default">Our Expertise</h3>
-					</div>
-				</div>
-				<div class="elementor-element elementor-element-d865daa at-heading-animation at-animation-heading-style-3 elementor-widget elementor-widget-heading" data-id="d865daa" data-element_type="widget" data-e-type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="heading.default">
-					<div class="elementor-widget-container">
-						<h2 class="elementor-heading-title elementor-size-default">Quality medicine you can trust</h2>
-					</div>
-				</div>
-				<div class="elementor-element elementor-element-ef3ee50 elementor-invisible elementor-widget elementor-widget-text-editor" data-id="ef3ee50" data-element_type="widget" data-e-type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;_animation_delay&quot;:100,&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="text-editor.default">
-					<div class="elementor-widget-container">
-						<p>Our team brings together a wealth of experience, precision, and a dedication to excellence in
-							pharmaceutical production.</p>
-					</div>
-				</div>
-			</div>
-			<div class="elementor-element elementor-element-1fadb02 e-con-full e-flex e-con e-child" data-id="1fadb02" data-element_type="container" data-e-type="container">
-				<div class="elementor-element elementor-element-ae1be24 e-con-full team-member-item e-flex elementor-invisible e-con e-child" data-id="ae1be24" data-element_type="container" data-e-type="container" data-settings="{&quot;animation&quot;:&quot;fadeInUp&quot;}">
-					<div class="elementor-element elementor-element-ff49469 image-anime at-image-animation at-animation-image-none elementor-widget elementor-widget-image" data-id="ff49469" data-element_type="widget" data-e-type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="image.default">
-						<div class="elementor-widget-container">
-							<img loading="lazy" decoding="async" width="440" height="545" src="/assets/uploads/products/iz-500-tablets.jpeg" class="attachment-full size-full wp-image-1695" alt="">
-						</div>
-					</div>
-					<div class="elementor-element elementor-element-f1d7542 e-con-full team-body e-flex e-con e-child" data-id="f1d7542" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-						<div class="elementor-element elementor-element-4c35528 elementor-shape-rounded elementor-grid-0 e-grid-align-center elementor-widget elementor-widget-social-icons" data-id="4c35528" data-element_type="widget" data-e-type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="social-icons.default">
-							<div class="elementor-widget-container">
-								<div class="elementor-social-icons-wrapper elementor-grid" role="list">
-									<span class="elementor-grid-item" role="listitem">
-										<a class="elementor-icon elementor-social-icon elementor-social-icon-instagram elementor-repeater-item-986cd4e" href="#" target="_blank">
-											<span class="elementor-screen-only">Instagram</span>
-											<i aria-hidden="true" class="fab fa-instagram"></i> </a>
-									</span>
-									<span class="elementor-grid-item" role="listitem">
-										<a class="elementor-icon elementor-social-icon elementor-social-icon-icon-facebook elementor-repeater-item-06d131e" href="#" target="_blank">
-											<span class="elementor-screen-only">Icon-facebook</span>
-											<i aria-hidden="true" class="icon icon-facebook"></i> </a>
-									</span>
-									<span class="elementor-grid-item" role="listitem">
-										<a class="elementor-icon elementor-social-icon elementor-social-icon-icon-dribbble-2 elementor-repeater-item-ffe588c" href="#" target="_blank">
-											<span class="elementor-screen-only">Icon-dribbble-2</span>
-											<i aria-hidden="true" class="icon icon-dribbble-2"></i> </a>
-									</span>
-								</div>
-							</div>
-						</div>
-						<div class="elementor-element elementor-element-66f3b3b elementor-widget elementor-widget-icon-box" data-id="66f3b3b" data-element_type="widget" data-e-type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="icon-box.default">
-							<div class="elementor-widget-container">
-								<div class="elementor-icon-box-wrapper">
-
-
-									<div class="elementor-icon-box-content">
-
-										<h3 class="elementor-icon-box-title">
-											West Africa Hub
-										</h3>
-
-										<p class="elementor-icon-box-description">
-											Burkina Faso, CÃ´te d'Ivoire, Senegal, Togo, Benin, Guinea, Mali, Niger,
-											Gabon </p>
-
-									</div>
-
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="elementor-element elementor-element-59193ce e-con-full team-member-item e-flex elementor-invisible e-con e-child" data-id="59193ce" data-element_type="container" data-e-type="container" data-settings="{&quot;animation&quot;:&quot;fadeInUp&quot;,&quot;animation_delay&quot;:100}">
-					<div class="elementor-element elementor-element-11f7a43 image-anime at-image-animation at-animation-image-none elementor-widget elementor-widget-image" data-id="11f7a43" data-element_type="widget" data-e-type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="image.default">
-						<div class="elementor-widget-container">
-							<img loading="lazy" decoding="async" width="440" height="547" src="/assets/uploads/products/fekey-syrup.jpeg" class="attachment-full size-full wp-image-2039" alt="">
-						</div>
-					</div>
-					<div class="elementor-element elementor-element-e1626b4 e-con-full team-body e-flex e-con e-child" data-id="e1626b4" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-						<div class="elementor-element elementor-element-6883893 elementor-shape-rounded elementor-grid-0 e-grid-align-center elementor-widget elementor-widget-social-icons" data-id="6883893" data-element_type="widget" data-e-type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="social-icons.default">
-							<div class="elementor-widget-container">
-								<div class="elementor-social-icons-wrapper elementor-grid" role="list">
-									<span class="elementor-grid-item" role="listitem">
-										<a class="elementor-icon elementor-social-icon elementor-social-icon-instagram elementor-repeater-item-986cd4e" href="#" target="_blank">
-											<span class="elementor-screen-only">Instagram</span>
-											<i aria-hidden="true" class="fab fa-instagram"></i> </a>
-									</span>
-									<span class="elementor-grid-item" role="listitem">
-										<a class="elementor-icon elementor-social-icon elementor-social-icon-icon-facebook elementor-repeater-item-06d131e" href="#" target="_blank">
-											<span class="elementor-screen-only">Icon-facebook</span>
-											<i aria-hidden="true" class="icon icon-facebook"></i> </a>
-									</span>
-									<span class="elementor-grid-item" role="listitem">
-										<a class="elementor-icon elementor-social-icon elementor-social-icon-icon-dribbble-2 elementor-repeater-item-ffe588c" href="#" target="_blank">
-											<span class="elementor-screen-only">Icon-dribbble-2</span>
-											<i aria-hidden="true" class="icon icon-dribbble-2"></i> </a>
-									</span>
-								</div>
-							</div>
-						</div>
-						<div class="elementor-element elementor-element-98fa582 elementor-widget elementor-widget-icon-box" data-id="98fa582" data-element_type="widget" data-e-type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="icon-box.default">
-							<div class="elementor-widget-container">
-								<div class="elementor-icon-box-wrapper">
-
-
-									<div class="elementor-icon-box-content">
-
-										<h3 class="elementor-icon-box-title">
-											Southeast Asia Hub
-										</h3>
-
-										<p class="elementor-icon-box-description">
-											Vietnam, Myanmar, Cambodia </p>
-
-									</div>
-
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="elementor-element elementor-element-ae8760b e-con-full team-member-item e-flex elementor-invisible e-con e-child" data-id="ae8760b" data-element_type="container" data-e-type="container" data-settings="{&quot;animation&quot;:&quot;fadeInUp&quot;,&quot;animation_delay&quot;:200}">
-					<div class="elementor-element elementor-element-4878658 image-anime at-image-animation at-animation-image-none elementor-widget elementor-widget-image" data-id="4878658" data-element_type="widget" data-e-type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="image.default">
-						<div class="elementor-widget-container">
-							<img loading="lazy" decoding="async" width="440" height="545" src="/wp-content/uploads/2024/12/team-3.jpg" class="attachment-full size-full wp-image-2038" alt="">
-						</div>
-					</div>
-					<div class="elementor-element elementor-element-2c7d508 e-con-full team-body e-flex e-con e-child" data-id="2c7d508" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-						<div class="elementor-element elementor-element-cd3e2d5 elementor-shape-rounded elementor-grid-0 e-grid-align-center elementor-widget elementor-widget-social-icons" data-id="cd3e2d5" data-element_type="widget" data-e-type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="social-icons.default">
-							<div class="elementor-widget-container">
-								<div class="elementor-social-icons-wrapper elementor-grid" role="list">
-									<span class="elementor-grid-item" role="listitem">
-										<a class="elementor-icon elementor-social-icon elementor-social-icon-instagram elementor-repeater-item-986cd4e" href="#" target="_blank">
-											<span class="elementor-screen-only">Instagram</span>
-											<i aria-hidden="true" class="fab fa-instagram"></i> </a>
-									</span>
-									<span class="elementor-grid-item" role="listitem">
-										<a class="elementor-icon elementor-social-icon elementor-social-icon-icon-facebook elementor-repeater-item-06d131e" href="#" target="_blank">
-											<span class="elementor-screen-only">Icon-facebook</span>
-											<i aria-hidden="true" class="icon icon-facebook"></i> </a>
-									</span>
-									<span class="elementor-grid-item" role="listitem">
-										<a class="elementor-icon elementor-social-icon elementor-social-icon-icon-dribbble-2 elementor-repeater-item-ffe588c" href="#" target="_blank">
-											<span class="elementor-screen-only">Icon-dribbble-2</span>
-											<i aria-hidden="true" class="icon icon-dribbble-2"></i> </a>
-									</span>
-								</div>
-							</div>
-						</div>
-						<div class="elementor-element elementor-element-2a02ab9 elementor-widget elementor-widget-icon-box" data-id="2a02ab9" data-element_type="widget" data-e-type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="icon-box.default">
-							<div class="elementor-widget-container">
-								<div class="elementor-icon-box-wrapper">
-
-
-									<div class="elementor-icon-box-content">
-
-										<h3 class="elementor-icon-box-title">
-											Middle East Operations
-										</h3>
-
-										<p class="elementor-icon-box-description">
-											Oman and regional partners </p>
-
-									</div>
-
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="elementor-element elementor-element-b50878a e-con-full team-member-item e-flex elementor-invisible e-con e-child" data-id="b50878a" data-element_type="container" data-e-type="container" data-settings="{&quot;animation&quot;:&quot;fadeInUp&quot;,&quot;animation_delay&quot;:300}">
-					<div class="elementor-element elementor-element-9dfc297 image-anime at-image-animation at-animation-image-none elementor-widget elementor-widget-image" data-id="9dfc297" data-element_type="widget" data-e-type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="image.default">
-						<div class="elementor-widget-container">
-							<img loading="lazy" decoding="async" width="440" height="547" src="/wp-content/uploads/2024/12/team-4.jpg" class="attachment-full size-full wp-image-2037" alt="">
-						</div>
-					</div>
-					<div class="elementor-element elementor-element-d95729a e-con-full team-body e-flex e-con e-child" data-id="d95729a" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-						<div class="elementor-element elementor-element-558a6c2 elementor-shape-rounded elementor-grid-0 e-grid-align-center elementor-widget elementor-widget-social-icons" data-id="558a6c2" data-element_type="widget" data-e-type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="social-icons.default">
-							<div class="elementor-widget-container">
-								<div class="elementor-social-icons-wrapper elementor-grid" role="list">
-									<span class="elementor-grid-item" role="listitem">
-										<a class="elementor-icon elementor-social-icon elementor-social-icon-instagram elementor-repeater-item-986cd4e" href="#" target="_blank">
-											<span class="elementor-screen-only">Instagram</span>
-											<i aria-hidden="true" class="fab fa-instagram"></i> </a>
-									</span>
-									<span class="elementor-grid-item" role="listitem">
-										<a class="elementor-icon elementor-social-icon elementor-social-icon-icon-facebook elementor-repeater-item-06d131e" href="#" target="_blank">
-											<span class="elementor-screen-only">Icon-facebook</span>
-											<i aria-hidden="true" class="icon icon-facebook"></i> </a>
-									</span>
-									<span class="elementor-grid-item" role="listitem">
-										<a class="elementor-icon elementor-social-icon elementor-social-icon-icon-dribbble-2 elementor-repeater-item-ffe588c" href="#" target="_blank">
-											<span class="elementor-screen-only">Icon-dribbble-2</span>
-											<i aria-hidden="true" class="icon icon-dribbble-2"></i> </a>
-									</span>
-								</div>
-							</div>
-						</div>
-						<div class="elementor-element elementor-element-eb0124c elementor-widget elementor-widget-icon-box" data-id="eb0124c" data-element_type="widget" data-e-type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="icon-box.default">
-							<div class="elementor-widget-container">
-								<div class="elementor-icon-box-wrapper">
-
-
-									<div class="elementor-icon-box-content">
-
-										<h3 class="elementor-icon-box-title">
-											European Logistics
-										</h3>
-
-										<p class="elementor-icon-box-description">
-											Strategic partnerships &amp; distribution, Belgium </p>
-
-									</div>
-
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	
 	<div class="elementor-element elementor-element-cc27dcf e-flex e-con-boxed e-con e-parent" data-id="cc27dcf" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
 		<div class="e-con-inner">
 			<div class="elementor-element elementor-element-aa1e8f2 e-con-full e-flex e-con e-child" data-id="aa1e8f2" data-element_type="container" data-e-type="container">
@@ -2208,7 +2029,7 @@
         <!-- Right: Image -->
         <div class="faq-v2-right">
             <div class="faq-v2-image-wrapper">
-                <img src="/assets/images/products_faq.png" alt="FAQ">
+                <img src="/assets/uploads/images/faq-new-image.png" alt="FAQ">
                 <div class="faq-v2-float-card">
                     <div class="faq-v2-float-icon"><i class="fa fa-question-circle"></i></div>
                     <div class="faq-v2-float-text">Relax, We've Got the Answers</div>
@@ -2229,7 +2050,7 @@
 									<div class="elementor-element elementor-element-bfc54a3 e-con-full e-flex e-con e-child" data-id="bfc54a3" data-element_type="container" data-e-type="container">
 										<div class="elementor-element elementor-element-522973c at-image-animation at-animation-image-none elementor-widget elementor-widget-image" data-id="522973c" data-element_type="widget" data-e-type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="image.default">
 											<div class="elementor-widget-container">
-												<img width="184" height="51" src="/assets/uploads/images/Logo.png" class="attachment-full size-full wp-image-8193" alt="">
+												<img src="/assets/uploads/images/c95ff92b-7a1f-43d9-a457-646fea0c0995.png" alt="Footer Logo" style="max-width: 250px;">
 											</div>
 										</div>
 										<div class="elementor-element elementor-element-77bf7f1 elementor-widget__width-initial elementor-widget elementor-widget-text-editor" data-id="77bf7f1" data-element_type="widget" data-e-type="widget" data-settings="{&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="text-editor.default">
@@ -2284,8 +2105,8 @@
 											<div class="ekit-wid-con">
 												<div class="ekit-vertical-main-menu-wraper   badge-position-left">
 													<div class="ekit-vertical-menu-container">
-<div style="display: flex; gap: 30px;">
-    <ul class="ekit-vertical-navbar-nav submenu-click-on-icon" style="flex: 1; padding: 0; margin: 0;">
+<div style="display: flex; gap: 15px;">
+    <ul class="ekit-vertical-navbar-nav submenu-click-on-icon" style="padding: 0; margin: 0; width: 45%;">
         
     <li class="menu-item menu-item-type-post_type menu-item-object-page nav-item elementskit-mobile-builder-content"><a href="/" class="ekit-menu-nav-link">HOME</a></li>
     <li class="menu-item menu-item-type-post_type menu-item-object-page nav-item elementskit-mobile-builder-content"><a href="/about-us/" class="ekit-menu-nav-link">ABOUT US</a></li>
@@ -2294,7 +2115,7 @@
     <li class="menu-item menu-item-type-post_type menu-item-object-page nav-item elementskit-mobile-builder-content"><a href="/rd/" class="ekit-menu-nav-link">R&amp;D</a></li>
 
     </ul>
-    <ul class="ekit-vertical-navbar-nav submenu-click-on-icon" style="flex: 1; padding: 0; margin: 0;">
+    <ul class="ekit-vertical-navbar-nav submenu-click-on-icon" style="padding: 0; margin: 0; width: 45%;">
         
     <li class="menu-item menu-item-type-post_type menu-item-object-page nav-item elementskit-mobile-builder-content"><a href="/quality/" class="ekit-menu-nav-link">QUALITY</a></li>
     <li class="menu-item menu-item-type-post_type menu-item-object-page nav-item elementskit-mobile-builder-content"><a href="/manufacturing/" class="ekit-menu-nav-link">MANUFACTURING</a></li>

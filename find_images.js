@@ -1,9 +1,15 @@
 const fs = require('fs');
-const html = fs.readFileSync('src/content/bodies/index.html', 'utf8');
-const regex = /<img[^>]+src=["']([^"']+)["']/g;
+const content = fs.readFileSync('src/content/bodies/products.html', 'utf8');
+
+const regex = /<img[^>]*>/g;
 let match;
-const images = new Set();
-while ((match = regex.exec(html)) !== null) {
-    images.add(match[1]);
+console.log('Images in products.html:');
+while ((match = regex.exec(content)) !== null) {
+    console.log(match[0]);
 }
-console.log(Array.from(images));
+
+const bgRegex = /background-image:[^;]*;/g;
+console.log('\nBackgrounds in products.html:');
+while ((match = bgRegex.exec(content)) !== null) {
+    console.log(match[0]);
+}

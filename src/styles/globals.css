@@ -7310,3 +7310,404 @@ body {
     padding: 0 !important;
     line-height: 1.4 !important;
 }
+
+/* New Centered Chairman Message Design */
+.chairman-card-new {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 60px 40px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    border-top: 5px solid #2b3a8c;
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.chairman-card-new .chairman-subtitle {
+    color: #2b3a8c;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    font-family: 'Inter', sans-serif;
+}
+.chairman-card-new .chairman-quote-icon {
+    color: #2b3a8c;
+    font-size: 90px;
+    font-family: Georgia, serif;
+    font-weight: 900;
+    line-height: 0.8;
+    margin: 0px auto 15px auto;
+    opacity: 0.15;
+}
+.chairman-card-new .chairman-text {
+    font-size: 20px;
+    line-height: 1.8;
+    color: #334155;
+    font-style: italic;
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+}
+.chairman-card-new .chairman-text:last-child {
+    margin-bottom: 0;
+}
+@media (max-width: 768px) {
+    .chairman-card-new {
+        padding: 40px 20px;
+    }
+    .chairman-card-new .chairman-text {
+        font-size: 16px;
+    }
+}
+
+
+/* =========================================
+   CREATIVE PREMIUM CHAIRMAN MESSAGE
+   ========================================= */
+.chairman-card-premium {
+    position: relative;
+    background: linear-gradient(135deg, #0d2657 0%, #1e3a8a 100%);
+    border-radius: 24px;
+    padding: 80px 60px;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(13, 38, 87, 0.2);
+    max-width: 950px;
+    margin: 0 auto;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Decorative glowing orbs */
+.chairman-card-premium::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    left: -10%;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(96, 165, 250, 0.15) 0%, rgba(0,0,0,0) 70%);
+    border-radius: 50%;
+    z-index: -1;
+    pointer-events: none;
+}
+.chairman-card-premium::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    right: -10%;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(52, 211, 153, 0.1) 0%, rgba(0,0,0,0) 70%);
+    border-radius: 50%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.premium-quote-bg {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 350px;
+    font-family: Georgia, serif;
+    color: rgba(255, 255, 255, 0.03);
+    line-height: 1;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.chairman-subtitle-premium {
+    color: #93c5fd;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 35px;
+    font-family: 'Inter', sans-serif;
+    display: inline-block;
+    padding: 8px 20px;
+    background: rgba(147, 197, 253, 0.1);
+    border-radius: 30px;
+    border: 1px solid rgba(147, 197, 253, 0.2);
+}
+
+.chairman-text-premium {
+    font-size: 26px;
+    line-height: 1.7;
+    color: #f8fafc;
+    font-style: italic;
+    font-weight: 300;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.premium-divider {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #60a5fa, #34d399);
+    margin: 35px auto;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(96, 165, 250, 0.5);
+}
+
+@media (max-width: 768px) {
+    .chairman-card-premium {
+        padding: 50px 30px;
+        border-radius: 16px;
+    }
+    .chairman-text-premium {
+        font-size: 18px;
+    }
+    .premium-quote-bg {
+        font-size: 200px;
+        top: 0;
+    }
+}
+
+
+/* =========================================
+   AWAKEN PROFESSIONAL CHAIRMAN MESSAGE
+   ========================================= */
+.chairman-message-section.awaken-style {
+    background-color: #f8fafc;
+    padding: 100px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.awaken-quote-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 70px 80px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    border-bottom: 4px solid #00b853; /* Brand Green Accent */
+}
+
+.awaken-quote-icon-top {
+    color: #2b3a8c;
+    width: 54px;
+    height: 54px;
+    margin: 0 auto 25px auto;
+    opacity: 0.12;
+}
+
+.awaken-quote-icon-top svg {
+    width: 100%;
+    height: 100%;
+}
+
+.awaken-chairman-subtitle {
+    color: #2b3a8c;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-family: 'Inter', sans-serif;
+}
+
+.awaken-chairman-divider {
+    width: 40px;
+    height: 2px;
+    background-color: #2b3a8c;
+    margin: 0 auto 35px auto;
+    opacity: 0.3;
+}
+
+.awaken-chairman-text {
+    font-size: 24px;
+    line-height: 1.8;
+    color: #334155;
+    font-weight: 400;
+    font-family: 'Georgia', serif;
+    margin-bottom: 25px;
+    font-style: italic;
+}
+
+.awaken-chairman-text:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .chairman-message-section.awaken-style {
+        padding: 60px 20px;
+    }
+    .awaken-quote-card {
+        padding: 40px 30px;
+    }
+    .awaken-chairman-text {
+        font-size: 18px;
+    }
+}
+
+
+/* =========================================
+   EXACT CHAIRMAN MESSAGE DESIGN (IMAGE REPLICA)
+   ========================================= */
+.chairman-message-section-exact {
+    padding: 70px 20px;
+    background-image: url('/assets/uploads/images/chairman-bg-new.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    background-color: #f0f8ff; /* Fallback */
+}
+
+.chairman-card-exact {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Quote Circle */
+.chairman-quote-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    gap: 15px;
+    position: relative;
+}
+
+.quote-circle {
+    width: 80px;
+    height: 80px;
+    border: 1px solid #e2e8f0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    color: #0044cc;
+    font-family: Georgia, serif;
+    font-weight: 900;
+    line-height: 1;
+    background: #ffffff;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+    position: relative;
+    padding-top: 15px; /* adjust quote vertical alignment */
+}
+/* creating the semi-circle arcs with dots */
+.quote-circle::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
+    border: 1px solid rgba(0, 68, 204, 0.3);
+    border-radius: 50%;
+    clip-path: polygon(0 0, 100% 0, 100% 30%, 0 30%, 0 70%, 100% 70%, 100% 100%, 0 100%);
+    pointer-events: none;
+}
+
+.quote-dot-left, .quote-dot-right {
+    width: 6px;
+    height: 6px;
+    background-color: #0044cc;
+    border-radius: 50%;
+}
+
+/* Subtitle */
+.chairman-subtitle-exact {
+    color: #0044cc;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Divider with Cube */
+.chairman-divider-exact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.divider-line {
+    width: 50px;
+    height: 1px;
+    background-color: #0044cc;
+    opacity: 0.5;
+}
+
+.divider-cube {
+    width: 10px;
+    height: 10px;
+    background-color: #0044cc;
+    transform: rotate(45deg);
+    box-shadow: inset -3px -3px 0 rgba(0,0,0,0.2), inset 1px 1px 0 rgba(255,255,255,0.3);
+}
+
+/* Text */
+.chairman-text-exact {
+    font-size: 24px;
+    line-height: 1.7;
+    color: #1e293b;
+    font-family: Georgia, serif;
+    font-style: italic;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.chairman-highlight {
+    color: #0044cc;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.chairman-small-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #0044cc;
+    border-radius: 50%;
+    margin: 0 auto 30px auto;
+}
+
+@media (max-width: 768px) {
+    .chairman-text-exact {
+        font-size: 18px;
+    }
+    .chairman-text-exact br {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+/* =========================================
+   QUICK LINKS LEFT SHIFT FIX
+   ========================================= */
+@media (min-width: 1025px) {
+    .elementor-element-b5d0d70 {
+        transform: translateX(-40px);
+    }
+}
+
+
+/* =========================================
+   PRODUCTS LEFT SHIFT FIX
+   ========================================= */
+@media (min-width: 1025px) {
+    .elementor-element-c512355 {
+        transform: translateX(-80px);
+    }
+}
