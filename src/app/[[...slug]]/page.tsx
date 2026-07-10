@@ -13,6 +13,8 @@ import { HomeSlider } from "@/components/home/HomeSlider";
 import { parseWordPressLayout, parseWordPressDetailLayout, parseHomeSliderLayout } from "@/lib/server-parser";
 import { products } from "@/lib/data/products";
 import { HtmlBlock } from "@/components/ui/HtmlBlock";
+import { DivisionPage } from "@/components/divisions/DivisionPage";
+import { getProductsByDivision } from "@/lib/division-mapper";
 
 type PageProps = {
   params: Promise<{ slug?: string[] }>;
@@ -24,14 +26,34 @@ export async function generateStaticParams() {
     .map((p) => ({
       slug: p.path.replace(/^\//, "").split("/").filter(Boolean),
     }));
-  return [{ slug: [] as string[] }, ...params];
+  
+  const divisionParams = [
+    "general-medicine",
+    "cardio-diabetics",
+    "critical-care",
+    "pediatrics",
+    "herbals",
+    "generic",
+    "upcoming"
+  ].map(slug => ({ slug: ["divisions", slug] }));
+  
+  return [{ slug: [] as string[] }, ...params, ...divisionParams];
+
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const urlPath = slugSegmentsToPath(slug);
   const page = getPageByPath(urlPath);
-  if (!page) return { title: "Not Found" };
+  
+  if (!page) {
+    if (urlPath.startsWith("/divisions/")) {
+      const divisionSlug = urlPath.replace("/divisions/", "");
+      return { title: divisionSlug.toUpperCase().replace("-", " ") + " - Impact Healthcare" };
+    }
+    return { title: "Not Found" };
+  }
+
 
   if (urlPath === "/" || urlPath === "/home-slider" || urlPath === "/home-image" || urlPath === "/home-video") {
     return {
@@ -127,7 +149,7 @@ export default async function DynamicPage({ params }: PageProps) {
   const urlPath = slugSegmentsToPath(slug);
   const page = getPageByPath(urlPath);
 
-  if (!page) notFound();
+  if (!page && !urlPath.startsWith("/divisions/")) notFound();
 
   // 1. Intercept the products catalog page
   if (urlPath === "/products") {
@@ -205,7 +227,29 @@ export default async function DynamicPage({ params }: PageProps) {
     );
   }
 
-  // 3. Fallback standard WordPress page rendering
+  
+  // 4. Intercept division category pages
+  if (urlPath.startsWith("/divisions/") && urlPath.replace("/divisions/", "").length > 0) {
+    const divisionSlug = urlPath.replace("/divisions/", "");
+    const divisionProducts = getProductsByDivision(divisionSlug);
+
+    const templateHtml = getPageBodyHtml("product__acofan-tablet");
+    const layout = parseWordPressDetailLayout(templateHtml);
+
+    return (
+      <WordPressPage
+        bodyHtml={templateHtml}
+        bodyClass={page?.bodyClass || "page-template-default page page-id-10083 wp-custom-logo wp-theme-dispnsary tt-magic-cursor elementor-default elementor-template-full-width elementor-kit-8 elementor-page"}
+        elementorConfig={page?.elementorConfig || null}
+      >
+        <HtmlBlock html={layout.headStyles + layout.preloader + layout.cursor + layout.header} />
+        <DivisionPage divisionSlug={divisionSlug} products={divisionProducts} />
+        <HtmlBlock html={layout.footer} />
+      </WordPressPage>
+    );
+  }
+
+  // 5. Fallback standard WordPress page rendering
   const bodyHtml = getPageBodyHtml(page.fileKey);
 
   return (
