@@ -308,7 +308,7 @@ for (const file of files) {
              fileNewHeader = fileNewHeader.replace('class="custom-nav-link active">HOME', 'class="custom-nav-link">HOME');
         }
 
-        const newHtml = html.substring(0, startIndex) + fileNewHeader + '\\n\\n' + html.substring(endIndex);
+        const newHtml = html.substring(0, startIndex) + fileNewHeader + '\n\n' + html.substring(endIndex);
         fs.writeFileSync(filePath, newHtml, 'utf8');
         modifiedCount++;
     }
