@@ -149,7 +149,28 @@ export default async function DynamicPage({ params }: PageProps) {
   const urlPath = slugSegmentsToPath(slug);
   const page = getPageByPath(urlPath);
 
-  if (!page && !urlPath.startsWith("/divisions/")) notFound();
+  // 4. Intercept division category pages (page may be undefined for these)
+  if (urlPath.startsWith("/divisions/") && urlPath.replace("/divisions/", "").length > 0) {
+    const divisionSlug = urlPath.replace("/divisions/", "");
+    const divisionProducts = getProductsByDivision(divisionSlug);
+
+    const templateHtml = getPageBodyHtml("product__acofan-tablet");
+    const layout = parseWordPressDetailLayout(templateHtml);
+
+    return (
+      <WordPressPage
+        bodyHtml={templateHtml}
+        bodyClass={page?.bodyClass || "page-template-default page page-id-10083 wp-custom-logo wp-theme-dispnsary tt-magic-cursor elementor-default elementor-template-full-width elementor-kit-8 elementor-page"}
+        elementorConfig={page?.elementorConfig || null}
+      >
+        <HtmlBlock html={layout.headStyles + layout.preloader + layout.cursor + layout.header} />
+        <DivisionPage divisionSlug={divisionSlug} products={divisionProducts} />
+        <HtmlBlock html={layout.footer} />
+      </WordPressPage>
+    );
+  }
+
+  if (!page) notFound();
 
   // 1. Intercept the products catalog page
   if (urlPath === "/products") {
@@ -222,28 +243,6 @@ export default async function DynamicPage({ params }: PageProps) {
           <HtmlBlock html={dynamicHeroBanner} />
           <ProductDetailPage product={product} />
         </div>
-        <HtmlBlock html={layout.footer} />
-      </WordPressPage>
-    );
-  }
-
-  
-  // 4. Intercept division category pages
-  if (urlPath.startsWith("/divisions/") && urlPath.replace("/divisions/", "").length > 0) {
-    const divisionSlug = urlPath.replace("/divisions/", "");
-    const divisionProducts = getProductsByDivision(divisionSlug);
-
-    const templateHtml = getPageBodyHtml("product__acofan-tablet");
-    const layout = parseWordPressDetailLayout(templateHtml);
-
-    return (
-      <WordPressPage
-        bodyHtml={templateHtml}
-        bodyClass={page?.bodyClass || "page-template-default page page-id-10083 wp-custom-logo wp-theme-dispnsary tt-magic-cursor elementor-default elementor-template-full-width elementor-kit-8 elementor-page"}
-        elementorConfig={page?.elementorConfig || null}
-      >
-        <HtmlBlock html={layout.headStyles + layout.preloader + layout.cursor + layout.header} />
-        <DivisionPage divisionSlug={divisionSlug} products={divisionProducts} />
         <HtmlBlock html={layout.footer} />
       </WordPressPage>
     );
