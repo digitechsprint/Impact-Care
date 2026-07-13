@@ -149,6 +149,10 @@ export default async function DynamicPage({ params }: PageProps) {
   const urlPath = slugSegmentsToPath(slug);
   const page = getPageByPath(urlPath);
 
+  if (urlPath === "/divisions" || urlPath === "/divisions/") {
+    notFound();
+  }
+
   if (!page && !urlPath.startsWith("/divisions/")) notFound();
 
   // 1. Intercept the products catalog page
@@ -229,8 +233,14 @@ export default async function DynamicPage({ params }: PageProps) {
 
   
   // 4. Intercept division category pages
-  if (urlPath.startsWith("/divisions/") && urlPath.replace("/divisions/", "").length > 0) {
+  if (urlPath.startsWith("/divisions/")) {
     const divisionSlug = urlPath.replace("/divisions/", "");
+    
+    // Completely delete the root /divisions page
+    if (divisionSlug.length === 0) {
+      notFound();
+    }
+    
     const divisionProducts = getProductsByDivision(divisionSlug);
 
     const templateHtml = getPageBodyHtml("product__acofan-tablet");
