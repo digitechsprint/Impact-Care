@@ -153,14 +153,14 @@ export default async function DynamicPage({ params }: PageProps) {
 
   // 1. Intercept the products catalog page
   if (urlPath === "/products") {
-    const rawHtml = getPageBodyHtml(page.fileKey);
+    const rawHtml = getPageBodyHtml(page!.fileKey);
     const layout = parseWordPressLayout(rawHtml);
 
     return (
       <WordPressPage
         bodyHtml={rawHtml}
-        bodyClass={page.bodyClass}
-        elementorConfig={page.elementorConfig}
+        bodyClass={page!.bodyClass}
+        elementorConfig={page!.elementorConfig}
       >
         <HtmlBlock html={layout.headStyles + layout.preloader + layout.cursor + layout.header} />
         <div className="elementor elementor-947">
@@ -175,15 +175,15 @@ export default async function DynamicPage({ params }: PageProps) {
 
   // 2. Intercept the home slider page ONLY
   if (urlPath === "/home-slider") {
-    const rawHtml = getPageBodyHtml(page.fileKey);
-    const elementorClass = page.fileKey === "index" ? ".elementor-13" : ".elementor-10180";
+    const rawHtml = getPageBodyHtml(page!.fileKey);
+    const elementorClass = page!.fileKey === "index" ? ".elementor-13" : ".elementor-10180";
     const layout = parseHomeSliderLayout(rawHtml, elementorClass);
 
     return (
       <WordPressPage
         bodyHtml={rawHtml}
-        bodyClass={page.bodyClass}
-        elementorConfig={page.elementorConfig}
+        bodyClass={page!.bodyClass}
+        elementorConfig={page!.elementorConfig}
       >
         <HtmlBlock html={layout.headStyles + layout.preloader + layout.cursor + layout.header} />
         <HomeSlider />
@@ -214,8 +214,8 @@ export default async function DynamicPage({ params }: PageProps) {
     return (
       <WordPressPage
         bodyHtml={templateHtml}
-        bodyClass={page.bodyClass}
-        elementorConfig={page.elementorConfig}
+        bodyClass={page!.bodyClass}
+        elementorConfig={page!.elementorConfig}
       >
         <HtmlBlock html={layout.headStyles + layout.preloader + layout.cursor + layout.header} />
         <div className="elementor elementor-10083">
@@ -250,13 +250,13 @@ export default async function DynamicPage({ params }: PageProps) {
   }
 
   // 5. Fallback standard WordPress page rendering
-  const bodyHtml = getPageBodyHtml(page.fileKey);
+  const bodyHtml = getPageBodyHtml(page!.fileKey);
 
   return (
     <WordPressPage
       bodyHtml={bodyHtml}
-      bodyClass={page.bodyClass}
-      elementorConfig={page.elementorConfig}
+      bodyClass={page!.bodyClass}
+      elementorConfig={page!.elementorConfig}
     />
   );
 }
