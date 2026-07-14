@@ -10,9 +10,10 @@ import {
 import { ProductsCatalog } from "@/components/products/ProductsCatalog";
 import { ProductDetailPage } from "@/components/products/ProductDetailPage";
 import { HomeSlider } from "@/components/home/HomeSlider";
-import { parseWordPressLayout, parseWordPressDetailLayout, parseHomeSliderLayout } from "@/lib/server-parser";
+import { parseWordPressLayout, parseWordPressDetailLayout, parseHomeSliderLayout, removeFooter } from "@/lib/server-parser";
 import { products } from "@/lib/data/products";
 import { HtmlBlock } from "@/components/ui/HtmlBlock";
+import { FOOTER_HTML } from "@/components/sections/content/footer";
 import { DivisionPage } from "@/components/divisions/DivisionPage";
 import { getProductsByDivision } from "@/lib/division-mapper";
 
@@ -172,7 +173,7 @@ export default async function DynamicPage({ params }: PageProps) {
           <ProductsCatalog />
           <HtmlBlock html={layout.lowerContent} />
         </div>
-        <HtmlBlock html={layout.footer} />
+        <HtmlBlock html={FOOTER_HTML} />
       </WordPressPage>
     );
   }
@@ -194,7 +195,7 @@ export default async function DynamicPage({ params }: PageProps) {
         <div className={`elementor ${elementorClass.replace('.', '')}`}>
           <HtmlBlock html={layout.lowerContent} />
         </div>
-        <HtmlBlock html={layout.footer} />
+        <HtmlBlock html={FOOTER_HTML} />
       </WordPressPage>
     );
   }
@@ -226,7 +227,7 @@ export default async function DynamicPage({ params }: PageProps) {
           <HtmlBlock html={dynamicHeroBanner} />
           <ProductDetailPage product={product} />
         </div>
-        <HtmlBlock html={layout.footer} />
+        <HtmlBlock html={FOOTER_HTML} />
       </WordPressPage>
     );
   }
@@ -254,21 +255,24 @@ export default async function DynamicPage({ params }: PageProps) {
       >
         <HtmlBlock html={layout.headStyles + layout.preloader + layout.cursor + layout.header} />
         <DivisionPage divisionSlug={divisionSlug} products={divisionProducts} />
-        <HtmlBlock html={layout.footer} />
+        <HtmlBlock html={FOOTER_HTML} />
       </WordPressPage>
     );
   }
 
   // 5. Fallback standard WordPress page rendering
-  const bodyHtml = getPageBodyHtml(page!.fileKey);
+  const bodyHtml = removeFooter(getPageBodyHtml(page!.fileKey));
 
   return (
     <WordPressPage
       bodyHtml={bodyHtml}
       bodyClass={page!.bodyClass}
       elementorConfig={page!.elementorConfig}
-    />
+    >
+      <HtmlBlock html={bodyHtml} />
+      <HtmlBlock html={FOOTER_HTML} />
+    </WordPressPage>
   );
 }
-// Trigger hot-reload 155
+// Trigger hot-reload 156
  
