@@ -149,39 +149,22 @@ export default async function DynamicPage({ params }: PageProps) {
   const urlPath = slugSegmentsToPath(slug);
   const page = getPageByPath(urlPath);
 
-  // 4. Intercept division category pages (page may be undefined for these)
-  if (urlPath.startsWith("/divisions/") && urlPath.replace("/divisions/", "").length > 0) {
-    const divisionSlug = urlPath.replace("/divisions/", "");
-    const divisionProducts = getProductsByDivision(divisionSlug);
-
-    const templateHtml = getPageBodyHtml("product__acofan-tablet");
-    const layout = parseWordPressDetailLayout(templateHtml);
-
-    return (
-      <WordPressPage
-        bodyHtml={templateHtml}
-        bodyClass={page?.bodyClass || "page-template-default page page-id-10083 wp-custom-logo wp-theme-dispnsary tt-magic-cursor elementor-default elementor-template-full-width elementor-kit-8 elementor-page"}
-        elementorConfig={page?.elementorConfig || null}
-      >
-        <HtmlBlock html={layout.headStyles + layout.preloader + layout.cursor + layout.header} />
-        <DivisionPage divisionSlug={divisionSlug} products={divisionProducts} />
-        <HtmlBlock html={layout.footer} />
-      </WordPressPage>
-    );
+  if (urlPath === "/divisions" || urlPath === "/divisions/") {
+    notFound();
   }
 
-  if (!page) notFound();
+  if (!page && !urlPath.startsWith("/divisions/")) notFound();
 
   // 1. Intercept the products catalog page
   if (urlPath === "/products") {
-    const rawHtml = getPageBodyHtml(page.fileKey);
+    const rawHtml = getPageBodyHtml(page!.fileKey);
     const layout = parseWordPressLayout(rawHtml);
 
     return (
       <WordPressPage
         bodyHtml={rawHtml}
-        bodyClass={page.bodyClass}
-        elementorConfig={page.elementorConfig}
+        bodyClass={page!.bodyClass}
+        elementorConfig={page!.elementorConfig}
       >
         <HtmlBlock html={layout.headStyles + layout.preloader + layout.cursor + layout.header} />
         <div className="elementor elementor-947">
@@ -196,15 +179,15 @@ export default async function DynamicPage({ params }: PageProps) {
 
   // 2. Intercept the home slider page ONLY
   if (urlPath === "/home-slider") {
-    const rawHtml = getPageBodyHtml(page.fileKey);
-    const elementorClass = page.fileKey === "index" ? ".elementor-13" : ".elementor-10180";
+    const rawHtml = getPageBodyHtml(page!.fileKey);
+    const elementorClass = page!.fileKey === "index" ? ".elementor-13" : ".elementor-10180";
     const layout = parseHomeSliderLayout(rawHtml, elementorClass);
 
     return (
       <WordPressPage
         bodyHtml={rawHtml}
-        bodyClass={page.bodyClass}
-        elementorConfig={page.elementorConfig}
+        bodyClass={page!.bodyClass}
+        elementorConfig={page!.elementorConfig}
       >
         <HtmlBlock html={layout.headStyles + layout.preloader + layout.cursor + layout.header} />
         <HomeSlider />
@@ -235,8 +218,8 @@ export default async function DynamicPage({ params }: PageProps) {
     return (
       <WordPressPage
         bodyHtml={templateHtml}
-        bodyClass={page.bodyClass}
-        elementorConfig={page.elementorConfig}
+        bodyClass={page!.bodyClass}
+        elementorConfig={page!.elementorConfig}
       >
         <HtmlBlock html={layout.headStyles + layout.preloader + layout.cursor + layout.header} />
         <div className="elementor elementor-10083">
@@ -248,14 +231,42 @@ export default async function DynamicPage({ params }: PageProps) {
     );
   }
 
+
+  // 4. Intercept division category pages
+  if (urlPath.startsWith("/divisions/")) {
+    const divisionSlug = urlPath.replace("/divisions/", "");
+    
+    // Completely delete the root /divisions page
+    if (divisionSlug.length === 0) {
+      notFound();
+    }
+    
+    const divisionProducts = getProductsByDivision(divisionSlug);
+
+    const templateHtml = getPageBodyHtml("product__acofan-tablet");
+    const layout = parseWordPressDetailLayout(templateHtml);
+
+    return (
+      <WordPressPage
+        bodyHtml={templateHtml}
+        bodyClass={page?.bodyClass || "page-template-default page page-id-10083 wp-custom-logo wp-theme-dispnsary tt-magic-cursor elementor-default elementor-template-full-width elementor-kit-8 elementor-page"}
+        elementorConfig={page?.elementorConfig || null}
+      >
+        <HtmlBlock html={layout.headStyles + layout.preloader + layout.cursor + layout.header} />
+        <DivisionPage divisionSlug={divisionSlug} products={divisionProducts} />
+        <HtmlBlock html={layout.footer} />
+      </WordPressPage>
+    );
+  }
+
   // 5. Fallback standard WordPress page rendering
-  const bodyHtml = getPageBodyHtml(page.fileKey);
+  const bodyHtml = getPageBodyHtml(page!.fileKey);
 
   return (
     <WordPressPage
       bodyHtml={bodyHtml}
-      bodyClass={page.bodyClass}
-      elementorConfig={page.elementorConfig}
+      bodyClass={page!.bodyClass}
+      elementorConfig={page!.elementorConfig}
     />
   );
 }

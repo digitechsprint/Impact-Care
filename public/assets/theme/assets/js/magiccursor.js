@@ -2,6 +2,7 @@
 	 "use strict";
 if ($("body").not(".is-mobile").hasClass("tt-magic-cursor")) {
     if ($(window).width() > 1024) {
+        if ($("#magic-cursor").length === 0 || $("#ball").length === 0) return;
         $(".magnetic-item").wrap('<div class="magnetic-wrap"></div>');
         
         if ($("a.magnetic-item").length) {
