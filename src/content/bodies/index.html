@@ -614,6 +614,9 @@ if (!window.mobileMenuFixed) {
     }
     
     @media (max-width: 768px) {
+        .hero-slide-bg {
+            background-position: 80% center;
+        }
         .hero-slide-content {
             padding: 0 60px !important;
         }
@@ -1066,7 +1069,7 @@ if (!window.mobileMenuFixed) {
 				<div class="elementor-element elementor-element-65ee97e e-con-full e-flex e-con e-child" data-id="65ee97e" data-element_type="container" data-e-type="container" style="display: flex !important; flex-direction: row !important; justify-content: space-between !important; align-items: flex-end !important; flex-wrap: wrap !important; margin-bottom: 20px !important; width: 100%;">
 					
 					<!-- Left Side: Titles and Text -->
-					<div style="flex: 1 1 auto; max-width: 75%; padding-right: 20px; text-align: left !important;">
+					<div class="hero-left-col" style="flex: 1 1 auto; max-width: 75%; padding-right: 20px; text-align: left !important;">
 						
 						<!-- Our Products Badge -->
 						<div class="elementor-element elementor-element-3c048a8 section-title at-heading-animation at-animation-heading-none elementor-invisible elementor-widget elementor-widget-heading" data-id="3c048a8" data-element_type="widget" data-e-type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;ekit_we_effect_on&quot;:&quot;none&quot;}" data-widget_type="heading.default" style="text-align: left !important; width: 100% !important; margin-bottom: 15px;">
@@ -1080,6 +1083,10 @@ if (!window.mobileMenuFixed) {
 							<div class="elementor-widget-container">
 								<style>
 									@media (max-width: 768px) {
+										.hero-left-col {
+											max-width: 100% !important;
+											padding-right: 0 !important;
+										}
 										.elementor-element-43a4963 {
 											width: 107% !important;
 										}
@@ -1090,8 +1097,13 @@ if (!window.mobileMenuFixed) {
 											white-space: normal !important;
 										}
 									}
+									@media (min-width: 769px) {
+										.mobile-break {
+											display: none;
+										}
+									}
 								</style>
-								<h2 class="elementor-heading-title elementor-size-default comp-title-fix" style="margin-bottom: 5px; text-align: left !important; font-size: 40px; line-height: 1.2; color: #0b1030;">Comprehensive services for your health</h2>
+								<h2 class="elementor-heading-title elementor-size-default comp-title-fix" style="margin-bottom: 5px; text-align: left !important; font-size: 40px; line-height: 1.2; color: #0b1030;">Comprehensive<br class="mobile-break">services for your<br class="mobile-break">health</h2>
 							</div>
 						</div>
 						
