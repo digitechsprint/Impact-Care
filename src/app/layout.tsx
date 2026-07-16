@@ -9,8 +9,13 @@ export const metadata: Metadata = {
   description:
     "Dispnsary medical and healthcare website – modern clinic, pharmacy, and doctor appointment landing page.",
   icons: {
-    icon: "/assets/uploads/2024/11/favicon.png",
-    apple: "/assets/uploads/2024/11/favicon.png",
+    icon: [
+      { url: "/favicon-icon.svg", type: "image/svg+xml" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+    shortcut: "/favicon.ico",
   },
   openGraph: {
     title: "Dispnsary – Medical WordPress Theme",
