@@ -65,3 +65,9 @@ export function parseHomeSliderLayout(html: string, elementorClass: string = '.e
 
   return { headStyles, preloader, cursor, header, lowerContent, footer };
 }
+
+export function removeFooter(html: string) {
+  const $ = cheerio.load(html, null, false);
+  $(".ekit-template-content-footer").remove();
+  return $.html();
+}
