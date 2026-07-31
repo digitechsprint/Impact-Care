@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xargs sed -i 's#/assets/uploads/images/c95ff92b-7a1f-43d9-a457-646fea0c0995\\\\.png#/assets/uploads/2024/11/logo-1.svg#g')",
+      "Bash(xargs sed -i 's#/assets/uploads/2024/11/logo-1\\\\.svg#/assets/uploads/images/c95ff92b-7a1f-43d9-a457-646fea0c0995.png#g')",
+      "Bash(pip --version)",
+      "Bash(python -c \"import PIL; print\\(PIL.__version__\\)\")",
+      "Bash(python -c \"import numpy; print\\(numpy.__version__\\)\")",
+      "Bash(python -c ' *)"
+    ]
+  }
+}
