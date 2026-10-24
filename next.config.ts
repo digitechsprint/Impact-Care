@@ -4,8 +4,21 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+  async redirects() {
+    return [
+      {
+        source: "/dispnsary/:path*",
+        destination: "/:path*",
+        permanent: false,
+      },
+    ];
+  },
   async rewrites() {
     return [
+      {
+        source: "/dispnsary/:path*",
+        destination: "/:path*",
+      },
       {
         source: "/wp-content/uploads/:path*",
         destination: "/assets/uploads/:path*",

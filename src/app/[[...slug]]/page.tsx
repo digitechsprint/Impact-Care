@@ -139,9 +139,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
+  const description = page.description ?? `${page.title} – Impact Healthcare.`;
+
   return {
     title: page.title,
-    description: `${page.title} – Impact Healthcare.`,
+    description,
+    ...(page.keywords && { keywords: page.keywords }),
+    openGraph: {
+      title: page.title,
+      description,
+      type: page.type === "post" ? "article" : "website",
+    },
   };
 }
 

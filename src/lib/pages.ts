@@ -12,6 +12,10 @@ export type PageManifestEntry = {
   stylesheets: string[];
   elementorConfig: string | null;
   bodyLength: number;
+  // Optional SEO fields (used by blog posts)
+  description?: string;
+  keywords?: string[];
+  image?: string;
 };
 
 type Manifest = {
