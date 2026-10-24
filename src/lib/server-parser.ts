@@ -69,5 +69,7 @@ export function parseHomeSliderLayout(html: string, elementorClass: string = '.e
 export function removeFooter(html: string) {
   const $ = cheerio.load(html, null, false);
   $(".ekit-template-content-footer").remove();
+  // Legacy Elementor footer left inside blog post bodies (FOOTER_HTML is rendered separately)
+  $(".elementor-4466").remove();
   return $.html();
 }

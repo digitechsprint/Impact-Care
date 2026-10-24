@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Stylesheets } from "@/components/styles/Stylesheets";
 import { ThemeScripts } from "@/components/client/ThemeScripts";
 import { ElementorLazyLoad } from "@/components/client/ElementorLazyLoad";
+import { SearchOverlay } from "@/components/client/SearchOverlay";
 import "@/styles/globals.css";
 
 export const metadata: Metadata = {
@@ -36,6 +37,7 @@ export default function RootLayout({
           </svg>
         </a>
         <ThemeScripts />
+        <SearchOverlay />
         <ElementorLazyLoad />
       </body>
     </html>

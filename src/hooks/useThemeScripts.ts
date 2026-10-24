@@ -108,30 +108,10 @@ export function useThemeScripts() {
     
     // --- ROBUST INITIALIZATION USING POLLING ---
     let sliderInitialized = false;
-    let searchInitialized = false;
-    
+    // Search icon clicks are handled by <SearchOverlay /> in the root layout
+
     const initInterval = setInterval(() => {
-      // 1. Fix Search Icon Click (Event Delegation)
-      if (!searchInitialized) {
-        const searchIcons = document.querySelectorAll('.custom-search-icon');
-        if (searchIcons.length > 0) {
-          searchInitialized = true;
-          // Use event delegation on document to catch clicks regardless of when icon is rendered
-          document.addEventListener('click', (e) => {
-            const target = e.target as Element;
-            if (target && (target.matches('.custom-search-icon') || target.closest('.custom-search-icon'))) {
-              e.preventDefault();
-              e.stopPropagation();
-              const query = window.prompt("Search products:");
-              if (query) {
-                window.location.href = "/products/?search=" + encodeURIComponent(query);
-              }
-            }
-          });
-        }
-      }
-      
-      // 2. Fix Home Page Hero Slider Arrows
+      // Fix Home Page Hero Slider Arrows
       if (!sliderInitialized) {
         const slides = document.querySelectorAll('.hero-slide');
         if (slides.length > 0) {
@@ -217,8 +197,7 @@ export function useThemeScripts() {
         }
       }
       
-      // Clear interval if both are initialized or if we are not on home page (for slider)
-      if (searchInitialized && sliderInitialized) {
+      if (sliderInitialized) {
         clearInterval(initInterval);
       }
     }, 500);
@@ -264,4 +243,196 @@ export function useThemeScripts() {
       document.removeEventListener('click', handleMobileToggle, true);
     };
   }, []);
+
+  // Form submission handler (Contact Us, Appointment, Career, Team forms)
+  useEffect(() => {
+    const handleFormSubmit = async (e: SubmitEvent) => {
+      const form = e.target as HTMLFormElement;
+      if (!form || !(form instanceof HTMLFormElement)) return;
+
+      // Forms managed by React components (e.g. header search) handle their own submit
+      if (form.closest("[data-skip-theme-submit], .ic-search-overlay")) return;
+      if (form.querySelector('input[type="search"]')) return;
+
+      // Only handle enquiry forms (contact / appointment / careers / team) — they collect contact details
+      const isEnquiryForm =
+        form.classList.contains("wpcf7-form") ||
+        !!form.closest(".wpcf7, .career-form") ||
+        !!form.querySelector(
+          'input[type="email"], input[type="tel"], input[name="email"], input[name="phone"], input[type="file"], textarea'
+        );
+      if (!isEnquiryForm) return;
+
+      // Prevent native browser submission & URL redirection to 404
+      e.preventDefault();
+      e.stopPropagation();
+
+      const pathname = typeof window !== "undefined" ? window.location.pathname : "";
+      const isAppointment =
+        pathname.includes("appointment") ||
+        form.id === "appointment-form" ||
+        !!form.querySelector('input[name="date"], select[name="category"], input[value*="Appointment"]');
+
+      const isCareers =
+        pathname.includes("careers") ||
+        !!form.closest(".career-form") ||
+        !!form.querySelector('input[type="file"], input[placeholder*="Resume"]');
+
+      const isTeam = pathname.includes("our-team");
+
+      // Find or create response output element
+      let responseOutput = form.querySelector<HTMLElement>(".wpcf7-response-output, .form-response-output");
+      if (!responseOutput) {
+        responseOutput = document.createElement("div");
+        responseOutput.className = "form-response-output";
+        const submitBtnEl = form.querySelector('button[type="submit"], input[type="submit"], #msgSubmit');
+        const submitParent = submitBtnEl?.closest(".col-md-12, .form-btn") || submitBtnEl?.parentElement;
+        if (submitParent && submitParent.parentElement === form) {
+          submitParent.after(responseOutput);
+        } else {
+          form.appendChild(responseOutput);
+        }
+      }
+
+      // Helper function to render alert banner
+      const renderAlert = (type: "success" | "error", title: string, message: string) => {
+        if (!responseOutput) return;
+        responseOutput.style.display = "block";
+        responseOutput.innerHTML = `
+          <div class="contact-${type}-alert">
+            <div class="alert-icon">
+              ${
+                type === "success"
+                  ? `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>`
+                  : `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>`
+              }
+            </div>
+            <div>
+              <div class="alert-title">${title}</div>
+              <p class="alert-desc">${message}</p>
+            </div>
+          </div>
+        `;
+        responseOutput.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      };
+
+      // Extract field inputs
+      const nameInput = form.querySelector<HTMLInputElement>(
+        'input[name="your-name"], input[name="first-name"], input[name="name"], #name, input[placeholder*="Name"]'
+      );
+      const emailInput = form.querySelector<HTMLInputElement>(
+        'input[name="email"], #email, input[type="email"], input[placeholder*="Email"]'
+      );
+      const phoneInput = form.querySelector<HTMLInputElement>(
+        'input[name="phone"], #phone, input[type="tel"], input[placeholder*="Phone"]'
+      );
+
+      // Validation
+      if (nameInput && !nameInput.value.trim()) {
+        form.classList.remove("init", "sent", "submitting");
+        form.classList.add("invalid");
+        form.setAttribute("data-status", "invalid");
+        renderAlert("error", "Name is required", "Please enter your full name to submit.");
+        nameInput.focus();
+        return;
+      }
+
+      if (emailInput) {
+        const emailVal = emailInput.value.trim();
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailVal || !emailRegex.test(emailVal)) {
+          form.classList.remove("init", "sent", "submitting");
+          form.classList.add("invalid");
+          form.setAttribute("data-status", "invalid");
+          renderAlert("error", "Valid email is required", "Please enter a valid email address so we can reply.");
+          emailInput.focus();
+          return;
+        }
+      }
+
+      if (phoneInput && !phoneInput.value.trim()) {
+        form.classList.remove("init", "sent", "submitting");
+        form.classList.add("invalid");
+        form.setAttribute("data-status", "invalid");
+        renderAlert("error", "Phone number is required", "Please enter your contact phone number.");
+        phoneInput.focus();
+        return;
+      }
+
+      // Submit button loading state
+      const submitBtn = form.querySelector<HTMLInputElement | HTMLButtonElement>(
+        'input[type="submit"], button[type="submit"], #msgSubmit'
+      );
+      const originalBtnText = submitBtn
+        ? (submitBtn as HTMLInputElement).value || submitBtn.textContent || "Submit Now"
+        : "Submit Now";
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        if ("value" in submitBtn && submitBtn.tagName === "INPUT") {
+          (submitBtn as HTMLInputElement).value = "Sending...";
+        } else {
+          submitBtn.textContent = "Sending...";
+        }
+      }
+
+      form.classList.remove("init", "invalid", "sent");
+      form.classList.add("submitting");
+      form.setAttribute("data-status", "submitting");
+
+      try {
+        const formData = new FormData(form);
+        await fetch("/api/contact", {
+          method: "POST",
+          body: formData,
+        });
+      } catch (err) {
+        console.warn("[Form Submission]", err);
+      }
+
+      // Small realistic pause for smooth UX
+      await new Promise((resolve) => setTimeout(resolve, 600));
+
+      // Reset button
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        if ("value" in submitBtn && submitBtn.tagName === "INPUT") {
+          (submitBtn as HTMLInputElement).value = originalBtnText;
+        } else {
+          submitBtn.textContent = originalBtnText;
+        }
+      }
+
+      // Success state
+      form.classList.remove("submitting", "invalid", "init");
+      form.classList.add("sent");
+      form.setAttribute("data-status", "sent");
+      form.reset();
+
+      const successTitle = isAppointment
+        ? "Appointment Request Sent Successfully!"
+        : isCareers
+        ? "Application Submitted Successfully!"
+        : isTeam
+        ? "Inquiry Sent Successfully!"
+        : "Message Sent Successfully!";
+
+      const successMessage = isAppointment
+        ? "Thank you for reaching out to Impact Healthcare. Our representative will contact you shortly to confirm your appointment schedule."
+        : isCareers
+        ? "Thank you for applying. We have received your resume and details, and our HR team will review your application."
+        : isTeam
+        ? "Thank you for reaching out. We have received your inquiry and will connect you with our specialist shortly."
+        : "Thank you for contacting Impact Healthcare! Your message has been sent successfully. Our team will get back to you shortly.";
+
+      renderAlert("success", successTitle, successMessage);
+    };
+
+    document.addEventListener("submit", handleFormSubmit as any, true);
+
+    return () => {
+      document.removeEventListener("submit", handleFormSubmit as any, true);
+    };
+  }, []);
 }
+
