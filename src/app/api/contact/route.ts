@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { createServerSupabase } from "@/lib/supabase";
 
 export async function POST(request: NextRequest) {
   try {
@@ -15,6 +16,30 @@ export async function POST(request: NextRequest) {
     }
 
     console.log("[Contact API] Received form submission:", data);
+
+    // Persist to Supabase (files can't be stored as JSON — keep only their names)
+    const supabase = createServerSupabase();
+    if (supabase) {
+      const payload: Record<string, unknown> = {};
+      for (const [key, value] of Object.entries(data)) {
+        if (key.startsWith("_wpcf7")) continue;
+        payload[key] = typeof value === "object" && value && "name" in value ? (value as File).name : value;
+      }
+      const str = (v: unknown) => (typeof v === "string" && v.trim() ? v.trim() : null);
+      const name =
+        str(payload["your-name"]) ??
+        ([str(payload["first-name"]), str(payload["last-name"])].filter(Boolean).join(" ") || null);
+
+      const { error } = await supabase.from("contact_submissions").insert({
+        page: request.headers.get("referer"),
+        name,
+        email: str(payload.email),
+        phone: str(payload.phone),
+        message: str(payload.msg) ?? str(payload.message),
+        payload,
+      });
+      if (error) console.error("[Contact API] Supabase insert failed:", error.message);
+    }
 
     return NextResponse.json({
       success: true,
